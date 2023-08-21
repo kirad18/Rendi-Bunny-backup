@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.ldBar {
+    position: relative;
+    font-size: 1.4em;
+  }
+  .ldBar.label-center > .ldBar-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 3px #fff;
+  }
+  .ldBar-label:after {
+    content: "%";
+    display: inline;
+    font-size: 1.4em;
+
+  }
+  .ldBar.no-percent .ldBar-label:after {
+    content: "";
+    font-size: 1.4em;
+  }
+  .ldBar img{
+    width: 100%;}
+  *{
+    border:none;
+    box-shadow: none;
+    margin: auto;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+  }
