@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/item.css">
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+html{ background-color: #E4D7CA;}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    text-decoration: none; 
+    background-color: #1c1c1c;
+    -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+}
+ @-webkit-keyframes color-change-2x {
+  0%{
+    background: #1c1c1c;
+  }
+50%{
+    background: #27183F;
+}
+ 
+  100% {
+    background: #5E1D53;
+  }
+}
+@keyframes color-change-2x {
+    0%{
+    background: #3B3A3A;
+  }
+
+  100% {
+    background: #27183F;
+  }
+} 
+ul li a { text-decoration: none; }
+a { text-decoration:none;}
+/* .header{
+    width: 100%;
+    position: absolute;
+}  */
+.container{
+    min-height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.box-top-text{
+    width: 100%;
+    /* background-color: black; */
+    padding-top: 60px;
+} 
+.box-top-text a{
+    font-family: 'Paytone One', sans-serif;
+    /* background-color: #8393e4; */
+    text-decoration: none;
+    color: #F2E8D9;
+    font-size: 6em;
+    animation: LetterColor 3s linear infinite;
+}
+ @keyframes LetterColor {
+    0% {
+        color: #fff;
+        text-shadow: 
+        0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 80px #00b3ff,
+        0 0 120px #00b3ff,
+        0 0 200px #00b3ff,
+        0 0 300px #00b3ff,
+        0 0 400px #00b3ff;
+        filter: blur(2px) hue-rotate(0deg);
+    }
+    70% {
+        color: #fff;
+        text-shadow: 
+        0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 80px #00b3ff,
+        0 0 120px #00b3ff,
+        0 0 200px #00b3ff;
+        filter: blur(2px) hue-rotate(360deg);
+    }
+    100% {
+        color: transparent;
+        text-shadow: none;
+        filter: blur(2px) hue-rotate(0deg);
+    }
+}
+
+.neon{
+    position: relative;
+}
+.neon img{
+    width: 65%;
+    vertical-align: bottom;
+    filter: brightness(150%) saturate(250%) hue-rotate(180deg);
+    animation: neonAnimation 1s infinite alternate;
+  
+}
+.box-middel{
+    width: 100%;
+    display: block;
+    transform: translateY(-100px); 
+    filter: brightness(150%) saturate(250%) hue-rotate(180deg);
+    animation: neonAnimation2 1s infinite alternate;
+}
+.box-middel img{
+    width: 30%;
+}
+@keyframes neonAnimation {
+  from {
+    filter: brightness(80%) saturate(50%) hue-rotate(180deg);
+  }
+  to {
+    filter: brightness(120%) saturate(150%) hue-rotate(360deg);
+  }
+}
+@keyframes neonAnimation2 {
+  from {
+    filter: brightness(60px) saturate(30%) hue-rotate(9deg);
+  }
+  to {
+    filter: brightness(90%) saturate(100%) hue-rotate(360deg);
+  }
+}
+
+.text-box{
+    width: 655px;
+    height: 300px;
+    position: absolute;
+    transform: translate(300px, 405\px);
+    padding: 0 20px;
+    display: flex;
+    text-decoration: none;
+}
+
+.date a{ color: rgb(27,27,27);font-family: 'Volkhov', serif;}
+.content a{ color: rgb(27,27,27);font-family: 'Volkhov', serif;}
+.read-txt{color: rgb(27,27,27); font-family: 'Volkhov', serif;}
+.date, li{
+    margin-bottom: 35px;
+    margin-right: 40px;
+}
+.read-outside{margin-top: -9px;}
+.read-box{
+    width: 100px;
+    height: 25px;
+    border: 1px solid rgb(27,27,27);
+    padding: 2px 0;
+}
+.neon-box{
+    display: block;
+    width: 100%;
+    position: relative;
+    transform: translateY(-150px);
+}
+
+.line{
+    display: flex;
+    flex-direction: column;
+    transform: translate(280px, 414px);
+    position: absolute;
+    z-index: 1;
+}
+
+.line-first{
+    width: 640px;
+    height: 1px;
+    border: 1px solid rgb(27,27,27);
+    margin-bottom: 49px;
+}
+
+.line-sec{
+    width: 640px;
+    height: 1px;
+    border: 1px solid rgb(27,27,27);
+    margin-bottom: 51px;
+}
+
+.line-third{
+    width: 640px;
+    height: 1px;
+    border: 1px solid rgb(27,27,27);
+    margin-bottom: 48px;
+}
+
+.line-fourth{
+    width: 640px;
+    height: 1px;
+    border: 1px solid rgb(27,27,27);
+}
+
+.inside-one{ margin-bottom: 26px;}
+.inside-two{ margin-bottom: 26px;}
+.inside-three{ margin-bottom: 24px;}
+.inside-four{ margin-bottom: 20px;}
+
+
+
+.circle-box{ 
+    position: absolute;
+    display: flex;
+    right: 10px;  
+    transform: translateY(60px);
+} 
+.left-one{
+    width: 300px;
+    height: 100px;
+    transform: translate(-5px,-120px);
+    border-radius: 50%;
+    background-color: #3B3A3A;
+    -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+}
+.left-two{
+    width: 100px;
+    height: 100px;
+    transform: translate(-25px, -120px);
+    border-radius: 55%;
+    background-color: #3B3A3A;
+    -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+}
+.left-three{
+    width: 300px;
+    height: 100px;
+    transform: translate(-25px,-120px);
+    border-radius: 50%;
+    background-color: #3B3A3A;
+    -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+}
+.left-four{
+    width: 100px;
+    height: 100px;
+    transform: translate(-60px,-140px);
+    border-radius: 60%;
+    background-color: #3B3A3A;
+    -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+}
+.left-five{
+    width: 50px;
+    height: 50px;
+    transform: translate(-50px,-80px);
+    border-radius: 45%;
+    background-color: #3B3A3A;
+    -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+} 
+ .left-six{
+    width: 640px;
+    height: 40px;
+    transform: translate(-70px,-70px);
+    border-radius: 40%;
+    background-color: #3B3A3A;
+    -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+} 
+.left-seven{
+    width: 50px;
+    height: 50px;
+    transform: translate(-88px,-80px);
+    border-radius: 45%;
+    background-color: #3B3A3A;
+    -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+} 
+.left-eight{
+    width: 240px;
+    height: 40px;
+    transform: translate(-90px,-80px);
+    border-radius: 45%;
+    background-color: #3B3A3A;
+    -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+} 
+.left-nine{
+    width: 50px;
+    height: 50px;
+    border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+    transform: rotate(-45deg);
+    margin-top: -60px;
+    background-color: #3B3A3A;
+    -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+}   
+.left-ten{
+    width: 150px;
+    height: 80px;
+    transform: translate(-3px,-120px);
+    border-radius: 50%;
+    background-color: #3B3A3A;
+    -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+}   
+
+.space{
+    width: 100%;
+    padding-bottom: 200px;
+    background-color: #F2E8D9;
+} 
+
+.footer {
+  position: relative;
+  z-index: 0;
+}
+
+
+
+    </style>
+</head>
+<body>
+    
+<div class="wrap">
+
+
+    <div class="container">
+
+        <div class="box-top-text">
+            <a href="guide-page.html">NEWS</a></div>
+
+        <div class="neon-box"> 
+            <div class="line">
+                <div class="line-first"></div>
+                <div class="line-sec"></div>
+                <div class="line-third"></div>
+                <div class="line-fourth"></div>
+            </div>
+            <div class="inside"></div>
+            <div class="neon">
+                <img src=" image/news-neon2.svg"></div>
+        </div>
+
+        <div class="text-box">
+            <div class="date">
+                <ul>
+                    <li><a href="news.html">July.22.2023</a><br></li>
+                    <li><a href="news.html">June. 10.2023</a><br></li>
+                    <li><a href="news.html">Feb. 14.2023</a><br></li>
+                    <li><a href="news.html">Jan. 02.2023</a></li>
+                </ul>
+            </div>
+
+        <div class="content">
+                <ul>
+                    <li><a href="news.html">Timetable Of Holiday Selling</a></li>
+                    <li><a href="news.html">New Products Release</a></li>
+                    <li><a href="news.html">Limited Edition Tote Bag Release</a></li>
+                    <li><a href="news.html">Happy New Year Sale</a></li>
+                </ul>
+        </div>
+        
+            <div class="read-outside">
+                <div class="inside-one">
+                <div class="read-box">
+                    <a href="news.html"><div class="read-txt">READ ❥</div></a>
+                </div>
+            </div>
+
+            <div class="inside-two">
+                <div class="read-box">
+                    <a href="news.html"><div class="read-txt">READ ❥</div></a>
+                </div>
+            </div>
+
+            <div class="inside-three">
+                <div class="read-box">
+                    <a href="news.html"> <div class="read-txt">READ ❥</div></a>
+                </div>
+                
+            </div>
+
+            <div class="inside-four">
+                <div class="read-box">
+                    <a href="news.html"><div class="read-txt">READ ❥</div></a>
+                </div>
+            </div>
+
+            <div class="more-box">
+                <a href="news.html"><div class="read-txt">MORE ❥</div></a>
+            </div>
+        </div> 
+    </div>
+
+    <div class="box-middel">
+        <img src=" image/news-arrow.svg"></div>
+           
+        <div class="btn">
+            <div class="btn-top">
+                <a href="menu.html" class="btn-txt">MENU</a></div>
+             <div class="btn-back"> </div>
+    </div>
+
+   
+    </div> 
+ 
+
+<div class="circle-box">
+    <div class="left-one"></div>
+    <div class="left-two"></div>
+    <div class="left-three"></div>
+    <div class="left-four"></div>
+    <div class="left-five"></div>
+    <div class="left-six"></div>
+    <div class="left-seven"></div>
+    <div class="left-eight"></div>
+    <div class="left-nine"></div>
+    <div class="left-ten"></div>
+</div> 
+<div class="space"></div>
+   
+<div class="footer">
+    <div class="footer-top">
+
+        <section>
+            <div class="scroll">
+             <div class="text">
+                CONTACT US ✉ CONTACT US ✉ CONTACT US ✉ CONTACT US ✉
+             </div>
+             <div class="text">
+                CONTACT US ✉ CONTACT US ✉ CONTACT US ✉ CONTACT US ✉
+             </div>
+           </div>
+           
+         </section>
+
+
+    </div>
+
+    <div class="footer-main">
+        <div class="main-box">
+        <div class="footer-left">
+          <div class="contact-text">STAY<br>TUNED</div>
+            <div class="contacts-box">
+                <div class="phone">
+                    <img src="image/about-phone.svg" alt="phone"></div>
+            </div>
+        </div>
+        </div>
+
+        <div class="footer-right">
+
+            <div class="scbcribe-box">
+                <div class="top-txt">
+                <h2>SCBSCRIBE</h2>
+                <h3>Don't pass notes — subscribe to our email list.</h3></div>
+                <form>
+                    <input type="text" name=""  size="40" placeholder="Email address" onfocus="this.placeholder=''" onblur="this.placeholder='Email address'"><br>
+                    <input type="submit" value="SEND">
+                </form>
+                
+                </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+
+        <div class="bottom-btn">
+
+            <div class="payment">
+                <div class="bottom-box">
+                    <a href="about.html" class="txt">PAYMENT&SHIPPING </a></div>
+            </div>
+
+            <div class="contact">
+                <div class="bottom-box">
+                    <a href="about.html" class="txt">CONTACT </a></div>
+                </div>
+
+            <div class="faq">
+                <div class="bottom-box">
+                    <a href="about.html" class="txt">FAQ </a></div>
+            </div>
+            <div class="icon">
+                <a class="fb "href="about.html"><img src="image/facebook icon.svg" alt="fb"></a>
+                <a class="ig "href="about.html"><img src="image/instagram icon.svg" alt="ig"></a></div>
+        </div> 
+    </div> 
+ 
+</div> 
+<!-- -----------volkhov font------------------ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Volkhov&display=swap" rel="stylesheet">
+<!-- Holtwood One SC -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Ultra&display=swap" rel="stylesheet">
+
+<!-- -----------Open Sans------------------ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+
+
+
+
+</body>
+<script src="./js/jquery-3.7.0.js"></script>
+</html>

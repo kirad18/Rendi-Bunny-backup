@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/loading-bar.min.css">
+    <script src="js/loading-bar.min.js"></script>
+    <title> Transition</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        html, body{
+            background-color: #f0fcfc;
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .box{
+            width: 100%;
+            display: block;
+           
+        }
+
+        .center-box{
+            margin: auto;
+            justify-content: center;
+            box-sizing: border-box;
+            display: flex;
+           
+        }
+
+        .bottom-box{
+            margin: auto;
+            justify-content: center;
+            box-sizing: border-box;
+            display: flex;
+        }
+        
+        .txt{
+            transform: translateY(150%);
+        }
+
+        .txt a{
+            text-decoration: none;
+        }
+
+        .txt h1 {
+            font: bold;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.7em;
+            color: rgb(27, 27, 27);
+            white-space: nowrap; 
+            top: 15%;
+        } 
+    
+        .txt h1:active{
+            background-color: rgb(27, 27, 27);
+            color: #dbdbdb;
+        }
+        
+        /**平板**/	
+        @media(min-width: 768px) and (max-width: 1023px){}
+        /**手機**/	
+        @media (max-width: 767px){
+        html, body{ overflow: hidden; }
+
+        .txt{
+            transform: translateY(200%);
+        }
+
+        .txt h1{
+            font-size: 1.2em;
+        }
+
+
+
+         }
+        
+    </style>
+</head>
+
+
+<body>
+    <div class="box">
+        <div class="center-box">
+            <div class="ldBar" data-type="fill" data-img="image/8-bit-rabbit.gif"
+     data-value="100"></div>
+
+    </div>
+    <div class="bottom-box">
+    <div class="txt">
+        <a  href="guide-page.html "><h1>PRESS START</h1></a> </div>
+    </div>
+
+</div>
+   
+ 
+
+
+
+
+
+
+</body>
+
+
+
+</html>

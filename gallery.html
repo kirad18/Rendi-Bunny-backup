@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/item.css">
+    <title>Gallery</title>
+<style type="text/css">
+ @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+html{height: 100%;}
+ body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    object-fit: cover;
+    box-sizing: border-box;
+    text-decoration: none; 
+    font-family: 'Paytone One', sans-serif;
+    background-color: #1c1c1c;
+    -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+}
+
+@-webkit-keyframes color-change-2x {
+  0%{
+    background: #1c1c1c;
+  }
+50%{
+    background: #27183F;
+}
+ 
+  100% {
+    background: #5E1D53;
+  }
+}
+@keyframes color-change-2x {
+    0%{
+    background: #3B3A3A;
+  }
+
+  100% {
+    background: #27183F;
+  }
+} 
+
+canvas {
+  display: block;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: -1; 
+  width: 100vw; 
+  height: 100vh;
+}
+.wrap{
+  /* display: flex; */
+  width: 100%;
+  flex:1;
+}
+
+.header{
+  width: 100%;
+  display: flex;
+  position: absolute;
+  padding-top: 10%; 
+} 
+
+.title{ margin: auto;}
+
+.title img{width: 100%;}
+
+.container{
+    width: 100%;
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    padding-bottom: 15%;  
+    padding-top: 20%;   
+}
+
+.right-box{
+  width: 50%;
+  display: flex;
+  justify-content: end;
+
+}
+
+.orbit-container {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    width: 800px;
+    height: 800px;
+    right: 10%;
+    top: 5%;
+    overflow: hidden;
+}
+
+.orbit {
+  position: absolute;
+  border-radius: 100%;
+  border: solid 3px rgba(112, 157, 194, 0.021);
+
+}
+
+#jupiter-orbit {
+  width: 800px;
+  height: 800px;
+  top: 45px;
+  left: calc(50% );
+
+}
+
+#jupiter {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 85%;
+  left: 15%;
+  border-radius: 100%;
+  background: linear-gradient(#f8c291, #e58e26);
+}
+
+#saturn-orbit {
+  width: 800px;
+  height: 800px;
+  top: 45px;
+  left: calc(50% );
+
+} 
+
+#saturn,
+#saturn-rings{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 65%;
+  left: -1%;
+  border-radius: 100%;
+  background: linear-gradient(#8d6e63, #ffe0b2)
+} 
+
+#saturn-rings {
+  width: 90px;
+  height: 90px;
+  top: 64%;
+  left:-2%;
+  background: rgba(255, 236, 179,0.25);
+}
+#uranus-orbit {
+  width: 800px;
+  height: 800px;
+  top: 45px;
+  left: calc(50% );
+}
+
+#uranus {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 13%;
+  left: 8%;
+  border-radius: 100%;
+  background: linear-gradient(#81ecec, #00cec9);
+} 
+
+#mercury-orbit {
+  width: 800px;
+  height: 800px;
+  top: 45px;
+  left: calc(50% );
+}
+
+#mercury {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 2%;
+  right: 67%;
+  border-radius: 100%;
+  background: linear-gradient(#fafafa, silver);
+}
+
+#sun-orbit {
+  width: 800px;
+  height: 800px;
+  top: 45px;
+  left: calc(50% );
+}
+
+#sun {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 40%;
+  left: -3%;
+  border-radius: 100%;
+  background: linear-gradient(#fcd670, #f2784b);
+  border-radius: 100%;
+  box-shadow: 0px 0px 8px 8px rgba(242, 120, 75, 0.2);
+}
+
+#planet-list { 
+  display: flex;
+  list-style: none;
+  font-family: Raleway;
+  color: white;
+  justify-content: center;
+}
+
+#planet-list li {
+  margin: 10px;
+  cursor: pointer;
+}
+
+
+
+.left-box{
+    width: 50%;
+
+}
+
+.orbit-container-left{
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  width: 800px;
+  height: 800px;
+  left: -35%;
+  top: 10%;
+  overflow: hidden;
+}
+
+.orbit-left{
+  position: absolute;
+  border-radius: 100%;
+  border: solid 3px rgba(112, 157, 194, 0.029);
+  right: 50%; 
+}
+
+#venus-orbit {
+  width: 800px;
+  height: 800px;
+  top: 45px;
+  right: calc(50% - 40%); 
+}
+
+#venus {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: -3%;
+  right: calc(50% - 10%);
+  border-radius: 100%;
+  background: linear-gradient(#a537fd, #d5b8ff)
+}
+
+#earth-orbit {
+  width: 800px;
+  height: 800px;
+  top: 45px;
+  right: calc(50% - 40%); 
+}
+
+#earth {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 12%;
+  right: calc(50% - 40%);
+  border-radius: 100%;
+  border: solid 3px rgba(112, 157, 194, 0.029);
+  background: linear-gradient(#19b5fe, #7befb2);
+}
+
+#mars-orbit {
+  width: 800px;
+  height: 800px;
+  top: 45px;
+  right: calc(50% - 40%); 
+}
+
+#mars {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 33%;
+  right: calc(50% - 55%);
+  border-radius: 100%;
+  background: linear-gradient(#ff9478, #eb974e)
+} 
+
+#pluto-orbit {
+  width: 800px;
+  height: 800px;
+  top: 45px;
+  right: calc(50% - 40%); 
+}
+
+#pluto {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 65%;
+  right: calc(50% - 50%);
+  border-radius: 100%;
+  background: linear-gradient(silver, #fafafa);
+}
+
+
+#neptune-orbit {
+  width: 800px;
+  height: 800px;
+  top: 45px;
+  right: calc(50% - 40%); 
+}
+
+#neptune {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  top: 85%;
+  right: calc(50% - 35%);
+  border-radius: 100%;
+  background: linear-gradient(#74b9ff, #0984e3);
+
+}
+
+.pic-box{
+  width: 100%;
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  opacity: .8;
+  border: 2px solid #E4D7CA;
+  background-color: #6A6665;
+  /* margin-top: 20%; */
+  transform: translateY(50%);
+}
+
+.outside{
+  position: relative;
+}
+
+.plaid{
+  position: absolute;
+  width: 31px;
+  left: 8%;
+  top: 2%;
+}
+
+.plaid img{
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.main-pic{
+  position: absolute;
+  width: 280px;
+  left: 20%;
+  top: 6%;
+
+}
+
+.main-pic img{
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.pic-text{
+  position: absolute;
+  text-align: center;
+  right: 5%;
+  top: 150px;
+  /* background-color: #00cec9; */
+
+}
+
+h1{
+  color: #f0ece8;
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 10%;
+}
+
+p{
+  color: #f0ece8;
+  font-size: 1em;
+}
+
+.footer {
+  position: relative;
+  background-color:#1c1c1c;
+  opacity: .8;
+  -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+}
+.marquee-bottom{
+  background-color:#1c1c1c;
+  -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+} 
+
+.bottom-text{
+    color:#f0ece8;
+}  
+
+.scbcribe-box{
+  background-color:#1c1c1c;
+}
+
+.scbcribe-box input[type="text"]{
+  background-color:#1c1c1c;
+}
+
+.scbcribe-box input[type="submit"]{
+  background-color:#f0ece8;
+  color:#1c1c1c;
+}
+.footer-bottom{
+  background-color:#1c1c1c;
+  -webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+
+}
+ 
+  
+
+#myModal{
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+  from {
+       -webkit-transform: scale(0)
+  }
+
+  to {
+       -webkit-transform: scale(1)
+  }
+}
+@keyframes zoom {
+    from {
+        transform: scale(0)
+  }
+
+    to {
+        transform: scale(1)
+  }
+}
+
+#myModal{
+  /* display: none; */
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  left: -1%;
+}
+
+#close{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 30px;
+  background-color:  #FCF4E7;
+  box-shadow: 5px 5px 0 rgb(27,27,27);
+  position: absolute;
+  text-align: center;
+  line-height: 35px;
+  color:rgb(27,27,27);
+  border: 2px solid rgb(27,27,27);
+  z-index: 1;
+  right: 5%;
+  top: 5%;
+  opacity: .8;
+}
+
+#close:hover, #close:focus {
+  cursor: pointer;
+  color: rgb(27,27,27);
+  text-decoration: none;
+  background-color: #FCF4E7;
+  -webkit-animation: rotate-90-ccw 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: rotate-90-ccw 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes rotate-90-ccw {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+@keyframes rotate-90-ccw {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+.btn{top: 15%;}
+.btn-top{
+  background-color: rgb(27, 27, 27);
+  border: 2px solid #FCF4E7;
+}
+
+
+
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <div class="header">
+    
+
+    <div class="title">
+      <a href=" guide-page.html"> <img src="image/gallery-title.svg" alt="title"></a></div>
+  </div>
+     
+  <div class="container">
+
+    <div class="left-box">
+      <div class="openModal">
+      <ul id="planet-list-left">
+        <li id="venus-link"><a href="#"></a></li>
+            <li id="earth-link"><a href="#"></a></li>
+            <li id="mars-link"><a href="#"></a></li>
+            <li id="pluto-link"><a href="#"></a></li>
+                <li id="neptune-link"><a href="#"></a></li>
+      </ul>
+    
+      <div class="orbit-container-left">
+        <a href="#">
+          <div id="venus-orbit" class="orbit-left">
+          <div id="venus"></div>
+        </div></a>
+
+        <a href="#">
+          <div id="earth-orbit" class="orbit-left">
+          <div id="earth"></div>
+        </div></a>
+
+        <a href="#">
+          <div id="mars-orbit" class="orbit-left">
+          <div id="mars"></div>
+        </div></a>
+
+        <a href="#">
+          <div id="pluto-orbit" class="orbit-left">
+          <div id="pluto"></div>
+        </div></a>
+
+        <a href="#">
+        <div id="neptune-orbit" class="orbit-left">
+          <div id="neptune"></div>
+        </div></a>
+
+      </div>
+    </div>
+  </div> 
+
+
+    <div class="right-box">
+      <div class="openModal">
+      <ul id="planet-list">
+        <li id="uranus-link"><a href="#"></a></li>
+        <li id="jupiter-link"><a href="#"></a></li>
+                <li id="saturn-link"><a href="#"></a></li>
+                <li id="mercury-link"> <a href="#"></a></li>
+                <li id="sun-link"><a href="#"></a></li> 
+      </ul>
+
+
+      <div class="orbit-container">
+
+        <a href="#">
+        <div id="mercury-orbit" class="orbit">
+          <div id="mercury"></div>
+        </div></a>
+
+        <a href="#">
+        <div id="jupiter-orbit" class="orbit">
+          <div id="jupiter"></div>
+        </div></a>
+
+        <a href="#">
+        <div id="saturn-orbit" class="orbit">
+          <div id="saturn"></div>
+        <div id="saturn-rings"></div>
+        </div></a>
+
+        <a href="#">
+        <div id="uranus-orbit" class="orbit">
+           <div id="uranus"></div>
+         </div></a>
+
+         <a href="#">
+        <div id="sun-orbit" class="orbit">
+          <div id="sun"></div>
+        </div></a>
+      </div>
+    </div>
+    </div>
+
+
+    <div id="myModal">
+        <div class="pic-box">
+          <a href="#" id="close">X</a>
+          <div class="outside"></div>
+          <div class="plaid">
+            <img src="image/plaid-three.svg" alt="plaid" ></div>
+          <div class="main-pic">
+            <img src="image/ufo.png"  alt="pic" ></div>
+          <div class="pic-text">
+            <h1> UFO <br> PRESENSE<br>AREA</h1>
+            <p>The work was completed in 2022.</p></div>
+        </div>
+      </div>
+   </div>
+
+   <div class="btn">
+    <div class="btn-top">
+        <a href="menu.html" class="btn-txt">MENU</a></div>
+    <div class="btn-back"> </div>
+  </div>
+
+   <div class="footer">
+    <div class="footer-top">
+      <section>
+        <div class="scroll">
+         <div class="text">
+            CONTACT US ✉ CONTACT US ✉ CONTACT US ✉ CONTACT US ✉
+         </div>
+         <div class="text">
+            CONTACT US ✉ CONTACT US ✉ CONTACT US ✉ CONTACT US ✉
+         </div>
+       </div>
+       
+     </section>
+    </div>
+
+    <div class="footer-main">
+
+        <div class="footer-left">
+          <div class="contact-text">STAY<br>TUNED</div>
+            <div class="contacts-box">
+                <div class="phone">
+                    <img src="image/about-phone.svg" alt="phone"></div>
+
+            </div>
+        </div>
+
+        <div class="footer-right">
+
+            <div class="scbcribe-box">
+                <div class="top-txt">
+                <h2>SCBSCRIBE</h2>
+                <h3>Don't pass notes — subscribe to our email list.</h3></div>
+                <form>
+                    <input type="text" name=""  size="40" placeholder="Email address" onfocus="this.placeholder=''" onblur="this.placeholder='Email address'"><br>
+                    <input type="submit" value="SEND">
+                </form>
+                
+                </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+
+        <div class="bottom-btn">
+
+            <div class="payment">
+                <div class="bottom-box">
+                    <a href="about.html" class="txt">PAYMENT&SHIPPING </a></div>
+            </div>
+
+            <div class="contact">
+                <div class="bottom-box">
+                    <a href="about.html" class="txt">CONTACT </a></div>
+                </div>
+
+            <div class="faq">
+                <div class="bottom-box">
+                    <a href="about.html" class="txt">FAQ </a></div>
+            </div>
+            <div class="icon">
+                <a class="fb "href="about.html"><img src="image/facebook icon.svg" alt="fb"></a>
+                <a class="ig "href="about.html"><img src="image/instagram icon.svg" alt="ig"></a></div>
+        </div> 
+    </div>  
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- Holtwood One SC -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Ultra&display=swap" rel="stylesheet">
+
+<!-- -----------Open Sans------------------ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+<canvas id="starrySky"></canvas>
+</body>
+
+<script src="./js/jquery-3.7.0.js"></script>
+<!-- 背景星空 -->
+<script>
+  const canvas = document.getElementById('starrySky');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const numStars = 300;
+  const stars = [];
+
+  for (let i = 0; i < numStars; i++) {
+      stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5 + 0.5,
+          alpha: Math.random() * 0.5 + 0.5,
+          blinkInterval: Math.floor(Math.random() * 200) + 50
+      });
+  }
+
+  function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (const star of stars) {
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+          ctx.fill();
+
+          if (star.blinkInterval > 0 && Date.now() % star.blinkInterval === 0) {
+              star.alpha = star.alpha === 1 ? 0.3 : 1;
+          }
+      }
+
+      requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
+
+<!-- 點星球跳視窗 -->
+<script>
+window.addEventListener('load', (event) => {
+let openModal = document.querySelectorAll(".openModal");
+let close = document.querySelectorAll("#close");
+let myModal = document.querySelectorAll("#myModal");
+
+
+$(document).ready(function() {
+   $(".openModal").on('click', function() {
+     showModal();
+   });
+
+    
+   $("#close").on('click', function() {
+     closeModal();
+   });
+
+
+
+ function showModal() {
+   $("#myModal").css('display', 'block');
+ }
+
+ function closeModal() {
+   $("#myModal").css('display', 'none');
+ };
+});
+});
+
+</script>
+</html>

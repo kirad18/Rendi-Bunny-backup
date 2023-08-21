@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+body::-webkit-scrollbar {
+    display: none;
+} 
+
+html{
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+.body{
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    object-fit: cover;
+}
+
+.top-plaid{
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top:0;
+    left:0;
+}
+
+.top-pic img{ width: 100%;}
+
+.top-pic-sec img{width: 100%;}
+
+.header .header-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 0 50px;
+    position: relative;
+}
+
+.btn{
+    display: block;
+    padding-top: 50px;
+}
+
+.btn-top{
+    width: 112px;
+    height: 49px;
+    position: absolute;
+    background-color: rgb(27, 27, 27);
+    border: 2px solid #ebebeb;
+    border-radius: 10px;
+    top: 40%;
+    left: 3%;
+    z-index: 1;
+}
+
+.btn-back{
+    width: 112px;
+    height: 55px;
+    background-color: rgb(27, 27, 27);
+    border-radius: 10px;
+    position: relative;
+    left:0;
+}
+
+.btn-txt{
+    font-family: 'Paytone One', sans-serif;
+    color:  #ebebeb;
+    font-size: 18px;
+    text-decoration: none; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
+ 
+ }  
+
+.btn-top:hover{
+    margin-top: -2px;
+    margin-left: 10px; 
+} 
+
+.title{
+    width: 400px;
+    text-align: center;
+    /* background-color: aquamarine; */
+    position: absolute;
+    margin-top: 50px;
+    background-size: contain;
+}
+
+.title img{ 
+    width: 100%;
+    vertical-align: middle;
+}
+.header nav{
+    text-align: right;
+    width: 100%;
+    transform: translate(-8%, 70%);
+}
+
+.log-in{
+    width: 35px;
+    margin-right: 3%;
+    display: inline-block;
+}
+
+.log-in img{
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.cart{
+    width: 35px;
+    display: inline-block;
+}
+.cart img{
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.container{
+    max-width: 1200px;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    position: relative;
+    padding-top: 80px;
+    margin-bottom: 10%;
+    background-size: contain;
+    flex: 1;
+}
+
+.sticker{
+    position: absolute;
+    z-index: 999;
+    left: 35%;
+    top: 13%;
+}
+
+.sticker img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+.axis{
+    left: 38%;
+    position: relative;
+}
+
+.all-button{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10px;
+    position: relative;
+    box-sizing: border-box 
+} 
+
+.button-top{
+    width: 230px;
+    height: 50px;
+    position: absolute;
+    background-color: rgb(27, 27, 27);
+    border: 2px solid #ebebeb;
+    border-radius: 10px;
+    padding: 0 0 10px 0;
+    left: 6%;
+} 
+
+.button-back{
+    display: flex;
+    width: 230px;
+    height: 60px;
+    background-color: rgb(27, 27, 27);
+    border-radius: 10px;
+    padding: 10px 0 10px 0;
+
+} 
+
+.button-txt{
+    font-family: 'Paytone One', sans-serif;
+    color:  #ebebeb;
+    font-size: 1.5em;
+    text-decoration: none; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 10px;
+    text-align: center;
+
+ } 
+ .button-about{margin-bottom: 50px;}
+ .button-news{margin-bottom: 50px;}
+ .button-member{margin-bottom: 50px;}
+ .button-gallery{margin-bottom: 50px;}
+
+ .button-top:hover{
+    background-color:#bf3a2a;
+    border: 2px solid rgb(27, 27, 27);
+    margin-top: -2px;
+    margin-left: 10px; 
+}
+
+.footer{
+    background-color: #A33A3A;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 20px 80px 50px 20px;
+    display: flex;
+    justify-content: center;
+    background-size: contain;
+    /* position: fixed;  */
+}
+.footer-box{
+    max-width: 1200px;
+}
+.bottom-btn{
+    display: flex;
+}
+.bottom-box{
+    width: 150px;
+    background-color: rgb(27, 27, 27);
+    border-radius: 10px;
+    padding: 15px 0;
+} 
+.txt{
+    font-family: 'Paytone One', sans-serif;
+    text-decoration: none; 
+    color:#ebebeb ;
+    box-sizing: content-box;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.finder{margin-right: 40px;}
+.login{margin-right: 40px;}
+.contact{margin-right: 40px;}
+.faq{margin-right: 40px;}
+.bottom-box:hover{
+    background-color:#ebebeb ;
+    border: 2px solid rgb(27, 27, 27);
+}
+.txt:hover{
+    color:rgb(27, 27, 27);
+}
+
+.bottom-icon{
+    display: block;
+    transform: translateY(15%);
+} 
+
+.facebook{
+    width: 35px;
+    margin-right: 40px;
+}
+
+.facebook img{
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.instagram{
+    width: 35px;
+}
+
+.instagram img{
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.fixed-bottom {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    position: fixed;
+}
+
+.bottom-pic img{width: 100%;}
+.bottom-pic-sec img{width: 100%;}
+
+</style>
+</head>
+
+
+
+<body>
+   
+   
+
+    <div class="wrap">
+        
+        <div class="top-plaid">
+            <img class="top-pic" src="image/plaid-two.svg" alt="plaid" >
+            <img class="top-pic-sec"src="image/plaid-two.svg" alt="plaid" ></div>
+        
+    <div class="header">
+       
+      <div class="header-box">
+     
+        <div class="btn">
+            <div class="btn-back"></div>
+            <div class="btn-top">
+                <a href="guide-page.html" class="btn-txt">CLOSE</a></div>
+           
+        </div>
+            
+        <div class="title">
+            <a href="guide-page.html" ><img src="image/menu-title.svg" alt="RENDI BUNNY">
+            </a>
+        </div>
+        
+    <nav> 
+       <div class="top-icon">
+            <div class="log-in">
+                <a href="menu.html" ><img src="image/log-in.svg" alt="登入"></a></div>
+             <div class="cart">
+                <a href="menu.html" ><img src="image/cart.svg" alt="購物車"></a></div>
+        </div>
+    </nav>  
+    </div>
+    </div>
+    
+
+    <div class="container">
+        <img class="sticker" src="image/menu-sticker.svg" alt="sticker"> 
+        <img class="axis" src="image/menu-axis.svg" alt="axis">
+     
+        <div class="all-button"> 
+
+        <div class="button-about"> 
+            <div class="button-top">
+             <a href="about.html" class="button-txt">A B O U T  </a></div>
+           <div class="button-back"> </div> 
+        </div> 
+     
+        <div class="button-news">
+            <div class="button-top">
+                <a href="news.html" class="button-txt">N E W S </a></div>
+           <div class="button-back"></div> 
+        </div> 
+
+        <div class="button-member">
+            <div class="button-top">
+                <a href="member.html" class="button-txt">M E M B E R </a></div>
+            <div class="button-back"> </div> 
+        </div>
+
+        <div class="button-gallery">
+            <div class="button-top">
+                <a href="gallery.html" class="button-txt">G A L L E R Y</a></div>
+            <div class="button-back"> </div> 
+        </div>
+
+        <div class="button-product">
+            <div class="button-top">
+                <a href="product.html" class="button-txt">P R O D U C T </a></div>
+           <div class="button-back"> </div> 
+        </div> 
+    </div> 
+    </div> 
+
+     <div class="footer">
+        <div class="footer-box">
+
+        <div class="bottom-btn">
+
+       <div class="finder">
+            <div class="bottom-box"> 
+                <a href="menu.html" class="txt">FINDER </a></div>
+        </div>
+        
+
+        <div class="login">
+        <div class="bottom-box"> 
+            <a href="menu.html" class="txt">LOG-IN </a></div>
+        </div>
+
+        <div class="contact">
+        <div class="bottom-box">
+            <a href="menu.html" class="txt">CONTACT </a></div>
+        </div>
+        
+        <div class="faq">
+        <div class="bottom-box">
+            <a href="menu.html" class="txt">FAQ </a></div>
+        </div>
+    
+        <div class="bottom-icon">
+            <a href="menu.html"><img class="facebook" src="image/facebook_black.png" ></a> 
+            <a href="menu.html"><img class="instagram" src="image/instagram_black.png" ></a>
+        </div>   
+    </div>
+   
+    </div> 
+
+
+    
+</div> 
+
+<div class="fixed-bottom">
+    <img class="bottom-pic" src="image/plaid-two.svg" alt="plaid" >
+    <img class="bottom--pic-sec"src="image/plaid-two.svg" alt="plaid" ></div>
+
+
+
+</body>
+<script src="./js/jquery-3.7.0.js"></script>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/item.css">
+    <title>Product</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+    html{
+        overflow-x: hidden;
+    }
+    body{
+        width: 100%;
+        min-height: 100vh;
+        box-sizing: border-box;
+        text-decoration: none;
+        background-color: #A33A3A;
+        font-family: 'Paytone One', sans-serif;   
+    }
+
+    .header{
+        height: 20vh;
+        width: 100%;
+        box-sizing: border-box;
+        /* background-color: aqua; */
+    }
+
+    a{
+        text-decoration: none;
+        color: #ebebeb;
+    }
+
+    .option{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        transform: translate(50px, 50px);
+    }
+    
+    .opt-txt{
+        border: 2px solid #ebebeb;
+        border-radius: 20px;
+        color:#ebebeb;
+        font-size: 1.5em;
+        padding: 10px 20px;
+    }
+
+    .opt-txt:hover{
+        background-color: #FBC848;
+        border: 2px solid rgb(27,27,27);
+        color: rgb(27,27,27);
+
+    } 
+    .stickers, .postcard, .t-shirt{
+        margin-right: 2px;
+    }
+    .cart{
+        width: 150px;
+        height: 30px; 
+        transform: translateX(200px);
+        animation: oneAnimation 4s cubic-bezier(.12, 0, .39, 0) infinite;
+    }
+    .cart-txt{
+        text-decoration: none;
+        border-radius: 20px;
+        color:rgb(27,27,27);
+        font-size: 1.5em;
+        padding: 10px 45px;
+        background-color: #FBC848;
+        border: 2px solid rgb(27,27,27);
+        
+    }
+    .cart:hover{
+        animation: twoAnimation 4s cubic-bezier(.12, 0, .39, 0) infinite;
+    }
+    @keyframes oneAnimation {
+            0% {
+                transform: scaleX(.5);
+            }
+
+            5% {
+                transform: scaleX(1);
+            }
+
+            10% {
+                transform: scaleX(.5);
+            }
+
+            15% {
+                transform: scaleX(1);
+            }
+
+            20% {
+                transform: scaleX(.5);
+            }
+
+            25% {
+                transform: scaleX(1);
+            }
+
+            75% {
+                transform: scaleX(1);
+            }
+
+            80% {
+                transform: scaleX(.5);
+            }
+
+            85% {
+                transform: scaleX(1);
+            }
+
+            90% {
+                transform: scaleX(.5);
+            }
+
+            95% {
+                transform: scaleX(1);
+            }
+
+            100% {
+                transform: scaleX(.5);
+            }
+        }
+        @keyframes twoAnimation {
+            0% {
+                transform: translate(-9px);
+            }
+
+            5% {
+                transform: translate(0);
+            }
+
+            10% {
+                transform: translate(9px);
+            }
+
+            10.1% {
+                transform: translate(-9px);
+            }
+
+            15% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(9px);
+            }
+
+            20.1% {
+                transform: translate(-9px);
+            }
+
+            25% {
+                transform: translate(0);
+            }
+
+            75% {
+                transform: translate(0);
+            }
+
+            80% {
+                transform: translate(9px);
+            }
+
+            80.1% {
+                transform: translate(-9px);
+            }
+
+            85% {
+                transform: translate(0);
+            }
+
+            90% {
+                transform: translate(9px);
+            }
+
+            90.1% {
+                transform: translate(-9px);
+            }
+
+            95% {
+                transform: translate(0);
+            }
+
+            100% {
+                transform: translate(9px);
+            }
+        }
+
+
+        /* ----------container區------------ */
+
+    .container{
+        max-width: 1200px;
+        inset: 0;
+        margin: auto;
+        box-sizing: border-box;
+        padding-bottom: 200px;
+    }
+    .top-box{
+        width: 100%;
+        height: 200px;
+        display: block;
+    }
+    .logo{
+        height: 100px;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .logo img{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+    .plaid{
+        display: flex;
+        justify-content: space-between;
+        margin-top: -3%;
+    }
+    .plaid img{
+        width: 100%;
+    }
+    .bottom-box{
+        width: 100%;
+        height: 100%;
+        display: block;
+
+    }
+    .box{
+        width: 1100px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 10px; 
+        row-gap: 150px;
+        transform: translate(0px, 10px);
+    }
+    .card{
+        border: 1px solid #ebebeb;
+        border-radius: 20px;
+        height: 100%;
+        width: 100%;
+        margin-right: 100px;
+        background-color:  #A33A3A; 
+        transition: transform .2s, box-shadow .2s;   
+    }
+    .card:hover{
+        transition: transform.2s; box-shadow: .2s;
+        transform: translateY(-4px);
+        box-shadow: 4px 4px 8px rbga(0, 0, 0, .1) ;
+    }
+    .pic img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;      
+    }
+    .pic{
+        height: 80%; 
+        overflow: hidden;
+        border-radius: inherit;
+        object-fit: scale-down;
+    }
+
+    .box-footer{
+        width: 100%;
+        height: 9rem;
+        background-color: #A33A3A;
+        border-bottom:1px solid #ebebeb;
+        border-radius: 20px;
+    }
+
+    .top-text{
+        overflow: hidden;
+        width: 100%;
+        height: 50%;
+        border-bottom: 1px solid #ebebeb;
+        text-transform: uppercase;
+        white-space: nowrap;
+        border-radius: inherit;
+        padding: 20px 15%;
+        box-sizing: border-box;
+    }
+    h4{
+        font-size: 1.5rem;
+        line-height: 150%;
+        color: #ebebeb;
+        display: block;
+    }
+    .bottom-footer-text{
+        display: flex;
+        height: 10%;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        padding: 1.5rem 1.25rem 1.25rem 10rem;
+        font-size: 1.5em;
+        color: #ebebeb;
+        text-overflow: ellipsis;
+
+    }
+    .price{
+       
+        line-height: 106%;  
+    }
+    .arrow{
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        line-height: 112%;  
+    }
+    .footer {
+        position: relative;
+        z-index: 0;
+    }
+    .option-two{display: none;}
+
+     /**平板**/	
+ @media(min-width: 768px) and (max-width: 1023px) {}
+/**手機**/	
+@media (max-width: 767px){
+    .element-to-hide{display: none;}
+
+    .btn {display: none;}
+    .wrap{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap ;
+        width: 100%;
+     }
+     .header{
+        width: 98%;
+     }
+    /* .option{display: none;} */
+    .option{
+        width: 98%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:start;
+        padding: 10% 0 0 1% ;
+        /* transform: translateX(-3%); */
+    }
+    .opt-txt{
+        border: 2px solid #ebebeb;
+        border-radius: 20px;
+        color:#ebebeb;
+        font-size: .8em;     
+    }
+    .stickers, .postcard, .t-shirt{
+        margin-right: 2%;
+    }
+    .others{
+        margin-top: 8%;
+        margin-left: 10%;
+    }
+    .cart{
+        margin-top: 8%;
+        margin-left: 10%;
+    }
+    .cart-txt{
+        font-size: 1em;  
+    }
+
+    .top-box{
+        width: 50%;
+    }
+    .logo{
+        width: 20%;
+    }
+    .plaid{
+        width: 50%;
+    }
+
+
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="btn">
+                <div class="btn-top">
+                    <a href="menu.html" class="btn-txt">MENU</a></div>
+                    <div class="btn-back"> </div>
+            </div>
+
+            <div class="option">
+                <div class="stickers">
+                    <a class="opt-txt" href="stickers.html">STICKERS</a>
+                </div>
+                <div class="postcard">
+                    <a class="opt-txt" href="postcard.html">POSTCARD</a>
+                </div>
+                <div class="t-shirt">
+                    <a class="opt-txt" href="t-shirt.html">T-SHIRT</a>
+                </div>
+                
+                <div class="others">
+                    <a class="opt-txt" href="others.html">OTHERS</a>
+                </div>
+                <div class="cart">
+                    <a class="cart-txt" href="#" >CART</a>
+                </div>
+                
+                </div>
+            </div>
+
+            
+            <!-- <div class="option-two">
+                <div class="stickers-two">
+                    <a class="opt-txt" href="stickers.html">STICKERS</a>
+                </div>
+                <div class="postcard">
+                    <a class="opt-txt" href="postcard.html">POSTCARD</a>
+                </div>
+                <div class="t-shirt">
+                    <a class="opt-txt" href="t-shirt.html">T-SHIRT</a>
+                </div>
+                
+                <div class="others">
+                    <a class="opt-txt" href="others.html">OTHERS</a>
+                </div>
+                <div class="cart">
+                    <a class="cart-txt" href="#" >CART</a>
+                </div>
+                
+                </div>
+            </div> -->
+          
+
+            <div class="container">
+
+                <div class="top-box">
+                <div class="logo">
+                    <a href="guide-page.html"><img src="image/product-title.svg" alt="title"></a></div>
+                    <div class="plaid">
+                    <div class="left-plaid">
+                        <img src="image/product-left plaid.svg" alt="left-plaid"></div>
+                    <div class="right-plaid">
+                        <img src="image/product-right plaid.svg"alt="right-plaid"></div> 
+                    </div>
+                </div>
+
+    
+                 <div class="bottom-box">
+
+                <div class="box">
+                    
+                    <div class="card">
+                        <div class="pic">
+                            <a href="#"><img src="image/product-ren.png"></a></div>
+                        <div class="box-footer">
+                            <div class="top-text">
+                                <a href="#"><h4>BLACK&WHITE REN style</h4></a></div>
+                                <div class="bottom-footer-text">
+                                    <a href="#"><span class="price"> $ 200 </span></a>
+                                    <a href="#"><div class="arrow">➜</a></div>
+                        </div>
+                    </div>
+                    </div>
+    
+                    <div class="card">
+                        <div class="pic">
+                            <a href="#"><img src="image/product-di.png"></a></div>
+                            <div class="box-footer">
+                                <div class="top-text">
+                                    <a href="#"><h4>BLACK&WHITE DI style</h4></a></div>
+                                    <div class="bottom-footer-text">
+                                        <span class="price"><a href="#">$ 200 </a> </span>
+                                    <div class="arrow"><a href="#">➜</a></div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    <div class="card">
+                        <div class="pic">
+                            <a href="#"><img src="image/product-blue.png"></a></div>
+                            <div class="box-footer">
+                                <div class="top-text">
+                                        <a href="#"><h4>YOUR FAV BLUE BUNNY </h4></a></div>
+                                <div class="bottom-footer-text">
+                                    <a href="#"><span class="price"> $ 200 </span></a>
+                                    <a href="#"><div class="arrow">➜</div></a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="card">
+                        <div class="pic">
+                            <a href="#"><img src="image/product-orange.png"></a></div>
+                            <div class="box-footer">
+                                <div class="top-text">
+                                    <a href="#"><h4>ORANGE DI WITH hello</h4></a></div>
+                                <div class="bottom-footer-text">
+                                    <a href="#"><span class="price"> $ 200 </span></a>
+                                    <a href="#"><div class="arrow">➜</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="pic">
+                            <a href="#"><img src="image/product-carrot.png"></a></div>
+                            <div class="box-footer">
+                                <div class="top-text">
+                                    <a href="#"><h4>carrot ren super cute</h4></a></div>
+                                <div class="bottom-footer-text">
+                                    <a href="#"><span class="price"> $ 200 </span></a>
+                                    <a href="#"><div class="arrow">➜</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="pic">
+                            <a href="#"><img src="image/product-di2.png"></a></div>
+                            <div class="box-footer">
+                                <div class="top-text">
+                                    <a href="#"><h4>specially of siliver di </h4></a></div>
+                                <div class="bottom-footer-text">
+                                    <a href="#"><span class="price"> $ 200 </span></a>
+                                    <a href="#"><div class="arrow">➜</a></div>
+                                </div>
+                    </div>
+                                         
+    
+                </div>
+            </div> 
+        </div> 
+    </div> 
+     
+
+            
+      
+    
+      <div class="footer">
+        <div class="footer-top">
+            <section>
+                <div class="scroll">
+                 <div class="text">
+                    CONTACT US ✉ CONTACT US ✉ CONTACT US ✉ CONTACT US ✉
+                 </div>
+                 <div class="text">
+                    CONTACT US ✉ CONTACT US ✉ CONTACT US ✉ CONTACT US ✉
+                 </div>
+               </div>
+               
+             </section>
+        </div>
+
+        <div class="footer-main">
+
+            <div class="footer-left">
+              <div class="contact-text">STAY<br>UNED</div>
+                <div class="contacts-box">
+                    <div class="phone">
+                        <img src="image/about-phone.svg" alt="phone"></div>
+
+                </div>
+            </div>
+
+            <div class="footer-right">
+
+                <div class="scbcribe-box">
+                    <div class="top-txt">
+                    <h2>SCBSCRIBE</h2>
+                    <h3>Don't pass notes — subscribe to our email list.</h3></div>
+                    <form>
+                        <input type="text" name=""  size="40" placeholder="Email address" onfocus="this.placeholder=''" onblur="this.placeholder='Email address'"><br>
+                        <input type="submit" value="SEND">
+                    </form>
+                    
+                    </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+
+            <div class="bottom-btn">
+
+                <div class="payment">
+                    <div class="bottom-box">
+                        <a href="#" class="txt">PAYMENT&SHIPPING </a></div>
+                </div>
+
+                <div class="contact">
+                    <div class="bottom-box">
+                        <a href="#" class="txt">CONTACT </a></div>
+                    </div>
+
+                <div class="faq">
+                    <div class="bottom-box">
+                        <a href="#" class="txt">FAQ </a></div>
+                </div>
+                <div class="icon">
+                    <a class="fb "href="#"><img src="image/facebook icon.svg" alt="fb"></a>
+                    <a class="ig "href="#"><img src="image/instagram icon.svg" alt="ig"></a></div>
+            </div> 
+        </div> 
+ 
+
+    
+            
+        </div> 
+
+
+
+
+
+
+
+</body>
+<!-- Holtwood One SC -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Ultra&display=swap" rel="stylesheet">
+
+<!-- -----------Open Sans------------------ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+<script src="./js/jquery-3.7.0.js"></script>
+</html>

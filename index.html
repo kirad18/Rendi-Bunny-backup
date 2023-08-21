@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style type="text/css" >
+        @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+ 
+    html{height: 100%;}
+    body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        object-fit: cover;
+        box-sizing: border-box;
+        object-fit: cover ;
+        font-family: 'Paytone One', sans-serif;
+        background-color: #E4D7CA;    
+    }
+
+    .btn{
+        display: flex;
+        box-sizing: border-box;
+        left: 3%;
+        top: 4%;
+        position: fixed;
+    }
+
+    .btn-top{
+        width: 112px;
+        height: 49px;
+        display: flex;
+        background-color: #bf3a2a;
+        border: 3px solid rgb(27, 27, 27);
+        border-radius: 10px;
+        top: 1%;
+        left: 7%;
+        position: absolute;
+        z-index: 998;
+    }
+
+    .btn-back{
+        width: 112px;
+        height: 59px;
+        background-color: rgb(27, 27, 27);
+        border-radius: 10px;
+        left: 7% ;
+        top: 2%;  
+        position: absolute
+    }
+
+    .btn-txt{
+        font-family: 'Paytone One', sans-serif;
+        color:  #E4D7CA;
+        font-size: 20px;
+        text-decoration: none;
+        inset: 0;
+        margin: auto;
+    }
+
+    .btn-top:hover{
+        background-color: #E6BB38;
+        margin-top: -2px;
+        margin-left: 10px; 
+    
+    }
+
+    .btn-txt:hover{
+        color: rgb(27, 27, 27);
+    }
+
+    .container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        background-color: #E4D7CA; 
+        flex-grow: 1;
+        /* margin-bottom: 10%; */
+    }
+
+    .title-box {
+        text-align: center;
+
+        box-sizing: border-box;
+        animation: dropDown 1.5s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+    @keyframes dropDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    } 
+    .title-fall {
+        animation: dropDown 1.5s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    .title{
+        width: 30%;
+        margin: auto;
+        padding-top: 6%;
+        box-sizing: border-box;
+    }
+
+    .title img{
+        width: 100%;  
+        transform: scale(1.5); 
+        transition: transform 0.3s ease-in-out;
+        vertical-align: bottom;
+    }
+
+    .foot-box{
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .rightfoot{
+        display: block;
+        transform: translate(-150%, 120%);
+        /* display: none; */
+    }
+
+    .rightfoot img{
+        width: 100%;
+        vertical-align: bottom;
+    
+    }
+
+    .leftfoot{
+        transform: translate(180%, 38%);
+    }
+
+    .leftfoot img{
+        width: 100%;
+        vertical-align: bottom;
+    }
+
+
+    .footer{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        flex-shrink: 0;
+    }
+
+    .bottom-floor{
+        width: 100%;
+        display: block;
+        bottom: 0;
+        left: 0;
+    
+    }
+
+    .floor img{width: 100%;}
+
+    .bottom{
+        width: 100%;
+        margin: auto;
+        display:flex;
+        text-align: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translate(-10px, -20%);
+    }
+
+
+    .tv img{
+        width: 100%;
+        vertical-align: bottom;
+    }  
+
+    .rabbit{
+        position: absolute;
+        transform-origin: center bottom; 
+        transition: transform 0.3s ease;
+        bottom: 0;
+        display: none;
+        transform: translate(10%, 5%);
+        /* transition: right 2s ease; */
+    }
+
+    .rabbit img{
+        width: 100%;
+        vertical-align: bottom;
+    }
+
+    .butt{
+        width: 200px;
+        position: absolute;
+        top: 35%;
+        /* display: none; */
+    }
+
+    .butt img{
+        width: 100%;
+    }
+
+    .butt.shake {
+        animation: shake  1.5s;
+    } 
+
+    @keyframes shake {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    } 
+
+    .butt.climb-out {
+        animation: climbOut 1.5s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes climbOut {
+        0% {
+            bottom: 0;
+            transform: translateX(0) translateY(0);
+        }
+        100% {
+            bottom: 100px; 
+            transform: translateX(10px) translateY(-20px); 
+        }
+    }
+
+    .move{
+        width: 180px;
+        position: absolute;
+        top: 20%;
+        display: none;
+    }
+
+    .move img{
+        width: 100%;
+    }
+
+    .dialog{
+        position: absolute;
+        top: -22%;
+        left: 30%;
+        z-index: 997;
+        display: none;
+    }
+
+    .pic{
+        width: 200px;
+
+    }
+
+    .pic img{
+        width: 100%;
+        transform: scale(0.9);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .pic img:hover{
+        transform: scale(0.8); 
+    }
+
+    .text {
+        font-size: 2em;
+        transform: translate(50px, -83px);
+    }
+
+    .dialog a {
+        color: rgb(27, 27, 27);
+        text-decoration: none;
+    }
+
+    .plaid{ 
+        position: relative;
+
+    }
+
+    .plaid img{
+        width: 100%; 
+    }
+
+    .floor{ position: relative;}
+
+    .floor img{
+        width: 100%; 
+    }
+
+    #tv {
+        position: relative;
+        width: 400px;
+        height: 300px;
+        overflow: hidden;
+    } */
+
+    #rabbit {
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        /* bottom: -100px; */
+        display: none;
+    } 
+    #menu-switch{ display: none;}
+    .main-nav, .menu-title-box{display: none;}
+ 
+
+
+
+
+    /**平板**/	
+    @media(min-width: 768px) and (max-width: 1023px) {
+     html, body{ overflow: hidden; }
+    
+     .main-nav{display: none;}
+
+     .title-box {
+            position:absolute;
+            left: 23%;
+            top: 20%;
+            box-sizing: border-box;
+    }
+
+    .title{width: 90%;}
+    
+    .title img{width: 100%;}
+
+    .foot-box{
+            position: absolute;
+            top: 40%;
+    }
+
+    .bottom{transform: translate(5%, -50%);}
+
+    #tv{
+        width:80%;
+        height: 100%;
+    }
+
+    .tv img{width:100%;}
+
+    .butt{
+        width: 35%;
+        position: absolute;
+        top: 50%;
+       
+    
+    }
+    .butt img{width: 100%;}
+
+    .move{
+        position: absolute;
+        width: 35%;
+        top:50%;
+    }
+    .move img{width: 100%;}
+
+    .rabbit{
+        width: 50%;
+        position: absolute;
+        top: -2%;
+    }
+
+    .rabbit img{width: 100%;}
+
+    .dialog{
+        width: 30%;
+        transform: translate(-43%, -305%);
+    }
+
+    .pic{
+        width: 100%;
+    }
+
+    .pic img{width: 100%;}
+
+    .text{
+            font-size: 45px;
+            transform: translate(22%, -240%)
+    }
+
+    .plaid, .floor{display: none;}
+        
+    }
+
+    /**手機**/	
+    @media (max-width: 767px){
+    html, body{ overflow: hidden; }
+    /* img{
+        max-width: 100%;
+        height: auto;
+    } */
+    .element-to-hide{display: none;}
+
+    .btn {display: none;}
+
+    .main-header{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+    }
+
+    .main-nav{
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background-color: #E4D7CA;
+            top: 6%;
+            left: 0%;
+            translate: -100% 0%;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 1s, translate 0s 1s;
+            z-index: 996;
+    }
+
+    .main-nav a{
+            padding: 10px;
+            text-decoration: none;
+            color: rgb(27, 27, 27);
+            display: block;
+    }
+
+    #menu-switch:checked + .main-header .main-nav{
+            translate: 0% 0%;
+            opacity: 1;
+            transition: opacity 1s;
+    }
+        
+    .hb label{
+            width: 70px;
+            height: 40px;
+            /* background-color: #c8bdb2; */
+            display: block;
+            position: relative;
+            border-radius: 10px;
+    }
+        
+    .hb span{
+            width: 40%;
+            height: 2px;
+            background-color: #c24b4b;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .hb span:nth-child(1){
+            translate: 0px -10px;
+            rotate: 0deg;
+            transition: translate 0.3s 0.3s,
+                        rotate 0.3s 0s;
+    }
+
+    .hb span:nth-child(2){
+            opacity: 1;
+            transition: opacity 0.3s 0.6s;
+    }
+
+    .hb span:nth-child(3){
+            translate: 0px 10px;
+            rotate: 0deg;
+            transition: translate 0.3s 0.3s,
+                        rotate 0.3s 0s;
+    }
+
+    #menu-switch:checked + .main-header .hb span:nth-child(1){
+            translate: 0px 0px;
+            rotate: 45deg;
+            transition: translate 0.3s 0.3s,
+                        rotate 0.3s 0.6s;
+    }
+
+    #menu-switch:checked + .main-header .hb span:nth-child(2){
+            opacity: 0;
+            transition: opacity 0.3s;
+    }
+
+    #menu-switch:checked + .main-header .hb span:nth-child(3){
+            translate: 0px 0px;
+            rotate: 315deg;
+            transition: translate 0.3s 0.3s,
+                        rotate 0.3s 0.6s;
+    } 
+
+    .title-box {
+            position:relative;
+            left: -5px;
+            padding-top: 15%;
+            box-sizing: border-box;
+    }
+
+    .title{width: 65%;}
+    .title img{width: 100%;}
+
+    .foot-box{
+        position: absolute;
+        top: 30%;
+    }
+    .foot-box img{width: 100%;}
+
+    .bottom{transform: translate(1%, -15%);}
+
+    .tv{width: calc(100vw- 30px);}
+
+    .tv img{width:100%;}
+
+    .butt{width: 50%;}
+
+    .butt img{width: 100%;}
+
+    .rabbit{
+        width: 70%;
+        transform: translate(50px, 40px);
+    }
+
+    .rabbit img{width: 100%;}
+
+    .dialog{
+        width: 80%;
+        transform: translate(-120px, -275%);
+    
+    }
+
+    .dialog img{width: 100%;}
+
+    .plaid, .floor{display: none;}
+
+    .text{
+            font-size: 32px;
+            transform: translate(48px, -84px)
+    }
+
+    .menu-box{
+        width: 100%;
+        background-color: #B30101;
+    }
+
+    .menu-title{
+            width: 80%;
+            text-align: center;
+            margin: auto;
+            padding-top: 1%;
+            background-color: #B30101;
+    }
+
+
+
+    .menu-title img{ width: 100%;}
+
+    .menu-outside{
+            width: 88%;
+            height: 70%;
+            border-radius: 10px;
+            padding: 10px;
+            margin: auto;
+            margin-bottom: 25px;
+            box-sizing: border-box;
+    }
+
+    .menu-inside{
+            width: 90%;
+            height: 93%;
+            margin: auto;
+    }
+
+    .menu{
+            font-size: 2.5em;
+            height: 5%;
+            margin: auto;
+            color: rgb(27, 27, 27);
+            text-align: center;
+            padding-top: 1%;
+            font-family: 'Holtwood One SC', serif;
+    }
+
+    .period{
+            font-size: 2em;
+            margin-bottom: 3%;
+    }
+
+    .about a, .news a, .member a, .gallery a, .product a{
+            font-size: 1.5em;
+            color: #B30101;
+            margin: auto;
+            padding: 10px 10px;
+    }
+
+    .about, .news, .member, .gallery, .product{
+            width: 100%;
+            height: 12%;
+            padding: 2px 10px;
+            box-sizing: border-box;
+            box-shadow: 0 0 5px #6b6b6b;
+    }
+
+    .about, .news, .member, .gallery{
+            margin-bottom: 3%;
+    }
+
+    .about-price, .news-price,  .member-price, 
+    .gallery-price, .product-price{
+            display: flex;
+            justify-content: end;
+            /* position: absolute; */
+            transform: translateY(-90%);
+    }
+
+    .others{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 3%;
+    }
+
+    .finder, .contact, .login, .faq{
+            width: 48%;
+            box-shadow: 0 0 5px #6b6b6b;
+    }
+
+    .finder a, .contact a, .login a, .faq a{
+            font-size: 1.5em;
+            color: rgb(27, 27, 27);
+            text-align: center;
+    }
+
+    .finder, .login{
+            margin-right: 10px;
+            box-sizing: border-box;
+    }
+
+    .finder, .contact{
+            margin-bottom: 10px;
+            box-sizing: border-box;
+    }
+
+    .top-plaid{
+            width: 100%;
+            background-color: #B30101;
+    }
+
+    .top-plaid img{width: 100%;}
+
+
+    .bottom-box{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-color: #B30101;
+    }
+
+    .top-icon{
+            width: 30%;
+            display: flex;
+            margin: auto;
+            background-color: #B30101;
+    }
+
+    .top-icon img{width: 100%;}
+
+    
+    .bottom-plaid{
+            width: 100%;
+            position: absolute;
+            background-color: #B30101;
+    }
+
+    .bottom-plaid img{width: 100%;} 
+
+    .about:active, .news:active, .member:active,
+    .gallery:active, .product:active{
+            transform: translate(0px,5px);
+            -webkit-transform: translate(0px,5px);
+	        background-color: #B30101;
+    }
+
+    .about a:active, .news a:active, .member a:active,
+    .gallery a:active, .product a:active, .content:active{
+            color: #E4D7CA;
+    }
+
+    .finder:active, .contact:active, .login:active, .faq:active{
+        background-color: rgb(27, 27, 27);
+    }
+
+    .finder a:active, .contact a:active, .login a:active, .faq a:active{
+            color: #E4D7CA;
+    }
+
+    .animate{
+	        transition: all 0.5s;
+	        -webkit-transition: all 0.5s;
+    }
+
+    }
+     
+
+</style>
+
+
+
+</head>
+<body>
+
+<div class="wrap">
+
+    <input type="checkbox" name="" id="menu-switch"> 
+
+        <header class="main-header">
+              
+            <div class="hb">
+                <label for="menu-switch">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+
+            <nav class="main-nav">
+                <div class="top-plaid">
+                    <img src="image/red plaid.svg" alt="plaid">
+                </div> 
+                <div class="menu-box">
+                <div class="menu-title">
+                    <a href="guide-page.html" >
+                        <img src="image/mobile-title.svg" alt="RENDI BUNNY"></a></div> </div>
+
+            <div class="menu-outside">
+                <div class="menu-inside">
+                    <div class="menu">MENU</div>
+                    <div class="period">................................</div>
+                    <div class="about">
+                        <a href="about.html">
+                            A&nbsp;B&nbsp;O&nbsp;U&nbsp;T&nbsp; 
+                            <div class="about-price">$50</div></a>
+                        </div>
+                     <div class="news">
+                        <a href="news.html">
+                            N&nbsp;E&nbsp;W&nbsp;S&nbsp; 
+                        <div class="news-price">$40</div></a>
+                        </div>
+                    <div class="member">
+                        <a href="member.html">
+                            M&nbsp;E&nbsp;M&nbsp;B&nbsp;E&nbsp;R&nbsp;
+                            <div class="member-price">$20</div></a>
+                        </div>
+                    <div class="gallery">
+                        <a href="gallery.html">
+                            G&nbsp;A&nbsp;L&nbsp;L&nbsp;E&nbsp;R&nbsp;Y&nbsp;
+                            <div class="gallery-price">$25</div></a>
+                        </div>
+                    <div class="product">
+                        <a href="product.html">
+                            P&nbsp;R&nbsp;O&nbsp;D&nbsp;U&nbsp;C&nbsp;T&nbsp;
+                            <div class="product-price">$45</div></a>
+                    </div>
+
+                    <div class="others">
+                        <div class="finder">
+                            <a href="gallery.html">FINDER</a></div>
+                            <div class="contact">
+                                <a href="gallery.html">CONTACT</a></div>
+                            <div class="login">
+                                <a href="gallery.html">LOGIN</a></div>
+                            <div class="faq">
+                                <a href="gallery.html">FAQ</a></div>
+                    </div>
+
+                        </div>
+                    </div>
+
+                <div class="bottom-box">
+
+                    <div class="top-icon">
+                        <div class="log-in">
+                            <a href="menu.html" ><img src="image/log-in_mobile_menu.svg" alt="登入"></a></div>
+                        <div class="cart">
+                            <a href="menu.html" ><img src="image/cart_mobile_menu.svg" alt="購物車"></a></div>
+                    </div>  
+                    <div class="bottom-plaid">
+                        <img src="image/red plaid.svg" alt="plaid">
+                </div>
+                   
+                     
+
+                </div>
+
+                  
+            </nav>
+
+               
+        
+        </header>
+ 
+    <div class="container">
+       
+        <div class="title-box">
+            <div class="title">
+                <img src="image/title.svg" alt="title"></div>
+        </div>
+        
+     
+        <div class="foot-box">
+            <div class="rightfoot">
+                <img src="image/right foot.svg" alt="rightfoot"></div>
+            <div class="leftfoot">
+                <img src="image/left foot.svg" alt="leftfoot"></div> 
+        </div>
+      
+        
+  
+
+
+    </div>
+ 
+ <div class="footer">
+    <div class="bottom-floor">
+        <div class="plaid-box">
+            <div class="plaid">
+                <img src="image/plaid.svg" alt="plaid">
+            </div>  
+        </div>
+        <div class="floor">
+            <img src="image/floor.svg" alt="floor">
+        </div> 
+       
+        <div class="dialog">
+            <a href="transition1.html"><div class="pic">
+                 <img src="image/dialogbox.svg" alt="dialog"></div>
+                 <div class="text">ENTER</div></a>
+         </div>
+       
+        <div class="bottom">
+            <div class="tv" id="tv">
+                <img src="image/tv.svg" alt="tv"></div>
+                
+            <div class="butt">
+                <img src="image/butt.svg" alt="ren"></div>
+            <div class="move">
+                <img src="image/butt2.svg" alt="move-out"></div>
+            <div class="rabbit" id="rabbit">
+                <img src="image/rabbit.svg" alt="ren"></div>
+          
+              
+        </div>
+   
+    </div>
+        <div class="element-to-hide">
+            <div class="btn">
+                <div class="btn-top">
+                    <a href="menu.html" class="btn-txt">MENU</a></div>
+            <div class="btn-back"> </div>
+        </div>
+
+</div>
+
+
+                  
+
+</div>
+</body>
+<!-- Holtwood One SC -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Ultra&display=swap" rel="stylesheet">
+
+<!-- -----------Open Sans------------------ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+
+<script src="./js/jquery-3.7.0.js"></script>
+
+
+<script>
+//兔子抖動加爬出
+$(document).ready(function() {
+
+    $(".butt").show().addClass("shake");
+
+    // 電視裡爬出來
+    setTimeout(function() {
+        $(".butt").removeClass("shake").addClass("climb-out");
+    }, 300); 
+
+ 
+    setTimeout(function() {
+        $(".butt").removeClass("climb-out").hide();
+        $(".move").show();
+    }, 1800); 
+
+    setTimeout(function() {
+        $(".move").hide();
+        $(".rabbit").show();
+    }, 2300); 
+
+    setTimeout(function() {
+        $(".dialog").show();     
+    }, 3200); 
+
+
+    
+
+});
+
+
+</script>
+
+
+
+
+
+<script>
+
+</script>
+
+
+
+</html>

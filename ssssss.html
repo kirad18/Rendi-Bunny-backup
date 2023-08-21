@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/item.css">
+  <title>Slide-out Fullscreen Main Menu with Custom Close Button</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    
+    #menu-container {
+      position: fixed;
+      top: 0;
+      left: -500px; /* 初始时菜单在屏幕左侧隐藏 */
+      width: 500px;
+      height: 100%;
+      background-color: #E5BC64;
+      color: #fff;
+      padding: 20px;
+      transition: left 0.3s; /* 添加过渡效果 */
+
+    }
+    #menu-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      color: #E4D7CA;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: opacity 0.3s; /* 添加过渡效果 */
+    }
+    #close-button {
+      position: fixed;
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: none; /* 初始时隐藏关闭按钮 */
+    }
+
+    .desk-header{
+      width: 100%;
+      display: block;
+      /* padding: 10px 20px; */
+      box-sizing: border-box;
+      position: relative;
+      margin-top: 80px;
+   
+    }
+
+    .desk-menu-title{
+      margin: auto;
+      width: 470px;
+      /* margin-top: 50px; */
+      /* margin-right: auto;  */
+      background-size: contain;
+    }
+
+    .desk-menu-title img{ 
+      width: 100%;
+      vertical-align: middle;
+    }
+
+    
+
+    .desk-menu-icon img{ 
+        width: 100%;
+        vertical-align: bottom;
+    }
+    .desk-menu-log-in{
+      margin-right: 30px;
+    }
+
+    .desk-container{
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      margin: auto;
+      padding-top: 10px;
+      margin-bottom: 50px;
+      background-color:#E5BC64;
+      position: relative;
+    }
+
+    .axis{
+      position: relative;
+      left: -30%;
+      top: 10%;
+    }
+    .axis img{
+      width: 100%;
+    }
+    .desk-sticker{
+      width: 65px;
+      position: absolute;
+      z-index: 999;
+      left: 15%;
+    }
+
+    .desk-sticker img{
+      width: 100%;
+      vertical-align: middle;
+    }
+
+    .all-button{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      box-sizing: border-box;
+      position: absolute;
+      margin-bottom: 10%;
+      left: 25%;
+    } 
+
+    .button-top{
+      width: 230px;
+      height: 50px;
+      position: absolute;
+      background-color: rgb(27, 27, 27);
+      border: 2px solid #E4D7CA;
+      border-radius: 10px;
+      padding: 0 0 10px 0;
+      left: 6%;
+      box-shadow: -10px 10px 0 black;
+    } 
+
+    .button-txt{
+      font-family: 'Paytone One', sans-serif;
+      color:  #ebebeb;
+      font-size: 1.5em;
+      text-decoration: none; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px 10px;
+      text-align: center;
+
+    } 
+    .button-about{margin-bottom:75px;}
+    .button-news{margin-bottom: 75px;}
+    .button-member{margin-bottom: 75px;}
+    .button-gallery{margin-bottom: 75px;}
+
+    .button-top:hover{
+      background-color:#bf3a2a;
+      border: 2px solid #ebebeb;
+      margin-top: -2px;
+      margin-left: 10px; 
+    }
+
+    .desk-footer{
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      /* position: relative; */
+      /* padding: 0px 80px 50px 20px; */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background-size: contain;
+    }
+
+    .bottom-box{
+      width: 95px;
+      background-color: rgb(27, 27, 27);
+      border-radius: 10px;
+      padding: 15px 0;
+    } 
+    
+    .txt{
+      font-family: 'Paytone One', sans-serif;
+      text-decoration: none; 
+      color:#ebebeb ;
+      box-sizing: content-box;
+      font-size: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .finder{margin-right: 20px;}
+    .login{margin-right: 20px;}
+    .contact{margin-right: 20px;}
+    .faq{margin-right: 20px;}
+    .bottom-box:hover{
+      background-color:#ebebeb ;
+      border: 2px solid rgb(27, 27, 27);
+    }
+    .txt:hover{
+      color:rgb(27, 27, 27);
+    }
+
+    .bottom-icon{
+      display: flex;
+      justify-content: space-evenly;
+      transform: translateY(50%);
+    } 
+
+ 
+    .facebook{
+       width: 20px;
+       margin-right: 40px;
+    }
+
+    .facebook img{
+      width: 100%;
+      vertical-align: bottom;
+    }
+
+    .instagram{
+      width: 20px;
+    }
+
+    .instagram img{
+      width: 100%;
+      vertical-align: bottom;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+
+
+<div id="menu-container">
+
+<div class="desk-header">
+  <a  href="#" >
+    <img class="desk-menu-title" src="image/menu-title2.svg" alt="RENDI BUNNY">
+  </a>
+  <!-- <nav class="desk-menu-icon">
+        <a class="desk-menu-log-in" href="#" ><img src="image/log-in.svg" alt="登入"></a>
+        <a class="desk-menu-cart" href="#" ><img src="image/cart.svg" alt="購物車"></a>
+  </nav> -->
+</div>
+
+<div class="desk-container">
+  <img class="axis" src="image/menu-axis.svg" alt="axis">
+  <img class="desk-sticker" src="image/rabbit-icon.svg" alt="sticker">
+
+
+  <div class="all-button"> 
+
+    <div class="button-about" data-button-id="about"> 
+        <div class="button-top">
+         <a href="about.html" class="button-txt">ABOUT</a></div>
+    </div> 
+ 
+    <div class="button-news" data-button-id="news">
+        <div class="button-top">
+            <a href="news.html" class="button-txt">NEWS</a></div>
+    </div> 
+
+    <div class="button-member" data-button-id="member">
+        <div class="button-top">
+            <a href="member.html" class="button-txt">MEMBER</a></div>
+    </div>
+
+    <div class="button-gallery"  data-button-id="gallery">
+        <div class="button-top">
+            <a href="gallery.html" class="button-txt">GALLERY</a></div>
+    </div>
+
+    <div class="button-product"  data-button-id="product">
+        <div class="button-top">
+            <a href="product.html" class="button-txt">PRODUCT</a></div>
+    </div> 
+  </div> 
+</div>
+
+
+
+<div class="desk-footer">
+  <div class="finder">
+    <div class="bottom-box"> 
+        <a href="menu.html" class="txt">FINDER </a></div>
+  </div>
+
+
+  <div class="login">
+  <div class="bottom-box"> 
+      <a href="#l" class="txt">LOG-IN </a></div>
+  </div>
+
+  <div class="contact">
+  <div class="bottom-box">
+      <a href="#" class="txt">CONTACT </a></div>
+  </div>
+  
+  <div class="faq">
+  <div class="bottom-box">
+      <a href="#" class="txt">FAQ </a></div>
+  </div>
+
+   <div class="bottom-icon">
+      <a href="#"><img class="facebook" src="image/facebook_black.png" alt="fb" ></a> 
+      <a href="#"><img class="instagram" src="image/instagram_black.png"  alt="ig"></a>
+  </div> 
+</div>
+
+
+</nav>
+
+
+<div class="btn"  id="menu-button">
+  <div class="btn-top">
+      <a href="#" class="btn-txt">MENU</a></div>
+      <div class="btn-back"> </div>
+</div>
+     
+ 
+<div class="close-btn" id="close-button">
+  <div class="close-btn-back"></div>
+  <div class="close-btn-top">
+      <a href="#" class="close-btn-txt">CLOSE</a></div>
+ 
+</div>
+
+
+<script>
+$(document).ready(function() {
+  var menuVisible = false;
+  var $menuContainer = $("#menu-container");
+  var $menuButton = $("#menu-button");
+  var $closeButton = $("#close-button");
+  
+  // 切换菜单的显示状态
+  function toggleMenu() {
+    if (menuVisible) {
+      // 隐藏菜单，显示原按钮
+      $menuContainer.animate({ left: "-500px" }, 300, function() {
+        $menuButton.show();
+        $closeButton.hide();
+      });
+    } else {
+      // 隐藏原按钮，显示关闭按钮，显示菜单
+      $menuButton.hide();
+      $closeButton.show();
+      $menuContainer.animate({ left: "0" }, 300);
+    }
+    menuVisible = !menuVisible;
+  }
+  
+  // 绑定按钮点击事件
+  $menuButton.click(toggleMenu);
+  $closeButton.click(toggleMenu);
+  
+  // 设置关闭按钮位置为原按钮位置
+  $closeButton.css({
+    top: $menuButton.position().top,
+    left: $menuButton.position().left
+  });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+  var $buttons = $(".all-button"); // 获取所有按钮元素
+  var $sticker = $(".sticker"); // 获取 sticker 元素
+  var initialTop = parseFloat($sticker.css("top")); // 获取初始的上偏移值
+  var stickerTopOffsets = [0, 100, 200, 300, 400]; // 每个按钮对应的 sticker 上偏移值，可以根据需要进行调整
+
+  // 给所有按钮添加点击事件
+  $buttons.click(function() {
+    var buttonIndex = $(this).index(); // 获取被点击按钮的索引
+    var stickerNewTop = stickerTopOffsets[buttonIndex]; // 根据按钮索引获取 sticker 的新上偏移值
+    $sticker.css({ top: stickerNewTop + "px" }); // 设置 sticker 的上偏移值
+  });
+});
+
+
+
+
+</script>
+
+<script>
+  //按鈕會跟著移動
+
+  $(document).ready(function() {
+
+    var $sticker = $(".desk-sticker");
+
+      //hover
+    $(".button-about, .button-news, .button-member, .button-gallery, .button-product").hover(function() {
+
+      var buttonId = $(this).data("button-id");
+
+
+      var buttonRect = $(this)[0].getBoundingClientRect();
+
+
+      var stickerY = buttonRect.top -155; 
+
+
+      $sticker.animate({ top: stickerY + "px" }, 100);
+    });
+
+
+    //on click
+    $(".button-about, .button-news, .button-member, .button-gallery, .button-product").click(function() {
+
+      var buttonId = $(this).data("button-id");
+
+
+      var buttonRect = $(this)[0].getBoundingClientRect();
+
+
+      var stickerY = buttonRect.top -155;  
+
+      $sticker.animate({ top: stickerY + "px" }, 50);
+    });
+  });
+</script>
+
+</body>
+</html>

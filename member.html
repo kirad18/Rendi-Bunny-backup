@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/item.css">
+    <title>Member</title>
+<style type="text/css">
+ @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+html{ line-height: 1.5;}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: 'Luckiest Guy', cursive;
+    background-color: #E4D7CA;
+    position: relative;
+}
+.wrap{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex: 1;    
+}
+.left-box{
+    width: 20%;
+    display: flex;
+    min-height: 100%;
+    background-color: #E5BC64;
+    position: relative;
+    padding-bottom: 400px;   
+}
+.outside{
+    width: 50%;
+    background-color: #E5BC64;
+}
+.out-box{
+    width: 65px;
+    margin: auto;
+}
+.out-box img{width: 100%;}
+.inside{
+  width: 50%;
+  height: 800px;
+  background-color: #E4D7CA;
+}
+:root {
+  --gap: 125px;
+  --duration: 5s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  gap: var(--gap);
+  flex-direction: column;
+  height: 500px;
+}
+
+.marquee--group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap);
+  flex-direction: column;
+  animation-duration:  240ms;
+  animation: scroll-y 30s linear infinite;
+}
+
+@keyframes scroll-y {
+  from {
+    transform: translateY(var(--scroll-start));
+  }
+  to {
+    transform: translateY(var(--scroll-end));
+  }
+}
+.center-box{
+  max-width: 1200px;
+    width: 60%;
+    min-height: 100%;
+    padding-bottom: 400px;  
+    background-color:#E5BC64; 
+    position: relative;
+}
+.container{
+  display: flex;
+  justify-content: center;
+
+}
+.sticker{
+  position: absolute;
+  width: 150px;
+  transform: translate(-250px, -30px);
+}
+.sticker img{width: 100%;}
+.ren{
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.ren img{width: 100%;}
+.ren:hover, .ren:focus, .ren:active {
+  -webkit-animation-name: hvr-wobble-horizontal;
+  animation-name: hvr-wobble-horizontal;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+@-webkit-keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.information-box{
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    position: relative;
+    /* background-color: blue; */
+}
+.favourite{
+    width: 150px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    transform: translate(-250%, 20%);
+}
+.favourite img{ width: 100%;}
+.features{
+    width: 150px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    transform: translate(-250%, 300%);
+} 
+.features img{width: 100%;}
+.color{
+    width: 150px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    transform: translate(130%, 20%);
+}
+.color img{width: 100%;}
+.profile{
+    width: 150px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    transform: translate(130%, 300%);
+}
+.profile img{width: 100%;}
+
+.openModal{position: relative;}
+.diPic{position: relative;}
+#myModal{
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+  from {
+       -webkit-transform: scale(0)
+  }
+
+  to {
+       -webkit-transform: scale(1)
+  }
+}
+@keyframes zoom {
+    from {
+        transform: scale(0)
+  }
+
+    to {
+        transform: scale(1)
+  }
+}
+#diImfro{
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+  from {
+       -webkit-transform: scale(0)
+  }
+
+  to {
+       -webkit-transform: scale(1)
+  }
+}
+@keyframes zoom {
+    from {
+        transform: scale(0)
+  }
+
+    to {
+        transform: scale(1)
+  }
+}
+#myModal{
+  /* display: none; */
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  left: 100px;
+}
+#diImfro{
+ display: none;
+ position: absolute;
+ width: 100%;
+ top: 50px;
+ left: 100px;
+}
+#close{
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ text-decoration: none;
+ font-size: 30px;
+ background-color:  #FCF4E7;
+ box-shadow: 5px 5px 0 rgb(27,27,27);
+ position: absolute;
+ right: 110px;
+ top: -30px;
+ text-align: center;
+ line-height: 40px;
+ color:rgb(27,27,27);
+ border: 2px solid rgb(27,27,27);
+}
+
+#close:hover, #close:focus {
+  cursor: pointer;
+  color: rgb(27,27,27);
+  text-decoration: none;
+  background-color: #FCF4E7;
+  -webkit-animation: rotate-90-ccw 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: rotate-90-ccw 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+#finish{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 30px;
+  background-color:  #FCF4E7;
+  box-shadow: 5px 5px 0 rgb(27,27,27);
+  position: absolute;
+  right: 110px;
+  top: -30px;
+  text-align: center;
+  line-height: 40px;
+  color:rgb(27,27,27);
+  border: 2px solid rgb(27,27,27);
+}
+
+#finish:hover, #finish:focus {
+  cursor: pointer;
+  color: rgb(27,27,27);
+  text-decoration: none;
+  background-color: #FCF4E7;
+  -webkit-animation: rotate-90-ccw 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: rotate-90-ccw 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes rotate-90-ccw {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+@keyframes rotate-90-ccw {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
+.right-box{
+    width: 20%;
+    padding-bottom: 400px;    
+    /* background-color: rgb(255, 106, 0); */
+    display: flex;
+    position: relative;
+}
+.out-box-two{
+    width: 65px;
+    margin: auto;
+} 
+.out-box-two img{width: 100%;}
+.popup-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: popup 1s ease-in-out;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(0); /* 從0倍縮放到1倍 */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.burger-box img{width: 100%;}
+.banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  height: 605px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.title{
+  display: flex;
+  position: absolute;
+  top:40%;
+}
+.title-box{
+
+  width: 400px;
+  height: 200px;
+  border-radius: 50%;
+  /* background-color: #3023a7; */
+}
+.title-text{
+  position: absolute;
+  font-size: 5em;
+  left: 110%;
+  top: 50%;
+}
+
+
+ /**平板**/	
+ @media(min-width: 768px) and (max-width: 1023px) {}
+
+  /**手機**/	
+ @media (max-width: 767px){
+
+  .element-to-hide{display: none;}
+
+  .btn {display: none;}
+
+   .wrap{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap ;
+        width: 100%;
+      
+     }
+
+      img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    .left-box{
+     display: none;
+    }
+    .right-box{display: none;}
+
+    .center-box{
+      width: 98%;
+    }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+    
+<div class="wrap">
+    <div class="left-box">
+        <div class="outside">
+            <div class="out-box">
+              <img src ="image/member_left.png" alt="leftbox">
+            </div>
+        </div>
+    
+        <div class="inside">
+             <div class="marquee">
+              <div class="marquee--group">
+                <img src="image/member-text.png" alt="text">
+                <img src="image/member-text.png" alt="text">
+                <img src="image/member-text.png" alt="text">
+              </div>
+             <div aria-hidden="true" class="marquee--group">
+              <img src="image/member-text.png" alt="text">
+              <img src="image/member-text.png" alt="text">
+              <img src="image/member-text.png" alt="text">
+            </div> 
+          </div>
+        </div> 
+    </div>
+
+
+
+ <div class="center-box">
+    <div class="container">
+        <div class="btn">
+            <div class="btn-top">
+                <a href="menu.html" class="btn-txt">MENU</a></div>
+                <div class="btn-back"> </div>
+        </div>
+
+            
+        <div class="banner">
+          <div class="slider">
+            <div class="slide">
+              <div class="openModal">
+                <a href="#" >
+                    <img class="ren" src="image/member-ren1.svg" alt="ren">
+                    <img class="sticker" src="image/member_sticker.svg" alt="sticker"></a></div></div>
+            <div class="slide">
+                <div class="diPic">
+                  <a href="#">
+                <img  class="ren" src="image/member-di.svg" alt="di">
+                <img class="sticker" src="image/member_sticker.svg" alt="sticker"></a></div></div>
+          </div>
+
+
+
+
+
+      <div class="popup-icon">
+        <div class="burger-box">
+          <img src="image/burger-box.svg" alt="burger-box">
+      </div> 
+    </div>
+
+
+
+          <button class="prev-btn">&#10094;</button>
+          <button class="next-btn">&#10095;</button>
+        </div>
+
+        
+        
+
+
+               <div id="myModal">
+                <a href="#" id="close">X</a>
+                
+                <div class="information-box">
+                  <div class="favourite">
+                   <a href="#"><img src="image/member-ren-fav.svg" alt="ren-fav"></a></div>
+      
+                  <div class="features">
+                    <a href="#"><img src="image/member-ren-features.svg" alt="ren-featuers"></a></div>  
+  
+                  <div class="color">
+                    <a href="#"><img src="image/member-ren-color.svg" alt="ren-color"></a></div>  
+   
+                  <div class="profile">
+                    <a href="#"><img src="image/member-ren-profile.svg" alt="ren-profile"></a></div>
+              </div>
+         
+              </div>
+
+
+                <div id="diImfro">
+                  <a href="#" id="finish">X</a>
+
+                  <div class="information-box">
+                    <div class="favourite">
+                     <a href="#"><img src="image/member-di-fav.svg" alt="di-fav"></a></div>
+        
+                    <div class="features">
+                      <a href="#"><img src="image/member-di-features.svg" alt="di-featuers"></a></div>  
+    
+                    <div class="color">
+                      <a href="#"><img src="image/member-di-color.svg" alt="di-color"></a></div>  
+     
+                    <div class="profile">
+                      <a href="#"><img src="image/member-di-profile.svg" alt="di-profile"></a></div>
+                </div>
+                </div>   
+                
+                   
+              
+              
+         </div> 
+        
+        </div>
+
+    <div class="right-box">
+        <div class="inside">
+          <div class="marquee">
+            <div class="marquee--group">
+              <img src="image/di-bunny-text.png" alt="di">
+              <img src="image/ren-bunny-text.png" alt="ren">
+              <img src="image/di-bunny-text.png" alt="di">
+            </div>
+          `<div aria-hidden="true" class="marquee--group">
+            <img src="image/ren-bunny-text.png" alt="ren">
+            <img src="image/di-bunny-text.png" alt="di">
+            <img src="image/ren-bunny-text.png" alt="ren">
+          </div>
+        </div>
+      </div>
+        <div class="outside"> 
+          <div class="out-box-two">
+            <img src ="image/member_right.png" alt="rightbox">
+          </div>
+        </div>
+          
+      </div>
+ 
+      
+   
+
+
+
+        <div class="footer">
+        <div class="footer-top">
+          <section>
+            <div class="scroll">
+             <div class="text">
+                CONTACT US ✉ CONTACT US ✉ CONTACT US ✉ CONTACT US ✉
+             </div>
+             <div class="text">
+                CONTACT US ✉ CONTACT US ✉ CONTACT US ✉ CONTACT US ✉
+             </div>
+           </div>
+           
+         </section>
+        </div>
+
+        <div class="footer-main">
+
+            <div class="footer-left">
+              <div class="contact-text">STAY<br>TUNED</div>
+                <div class="contacts-box">
+                    <div class="phone">
+                        <img src="image/about-phone.svg" alt="phone"></div>
+
+                </div>
+            </div>
+
+            <div class="footer-right">
+
+                <div class="scbcribe-box">
+                    <div class="top-txt">
+                    <h2>SCBSCRIBE</h2>
+                    <h3>Don't pass notes — subscribe to our email list.</h3></div>
+                    <form>
+                        <input type="text" name=""  size="40" placeholder="Email address" onfocus="this.placeholder=''" onblur="this.placeholder='Email address'"><br>
+                        <input type="submit" value="SEND">
+                    </form>
+                    
+                    </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+
+            <div class="bottom-btn">
+
+                <div class="payment">
+                    <div class="bottom-box">
+                        <a href="about.html" class="txt">PAYMENT&SHIPPING </a></div>
+                </div>
+
+                <div class="contact">
+                    <div class="bottom-box">
+                        <a href="about.html" class="txt">CONTACT </a></div>
+                    </div>
+
+                <div class="faq">
+                    <div class="bottom-box">
+                        <a href="about.html" class="txt">FAQ </a></div>
+                </div>
+                <div class="icon">
+                    <a class="fb "href="about.html"><img src="image/facebook icon.svg" alt="fb"></a>
+                    <a class="ig "href="about.html"><img src="image/instagram icon.svg" alt="ig"></a></div>
+            </div> 
+        </div>   
+ 
+
+
+
+
+</div>
+
+</body>
+
+<!-- -------------------------Luckiest Guy font--------------- -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<!-- Holtwood One SC -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Ultra&display=swap" rel="stylesheet">
+
+<!-- -----------Open Sans------------------ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+
+<script src="./js/jquery-3.7.0.js"></script>
+<script>
+
+//懸浮視窗
+document.querySelector('.popup-icon').addEventListener('click', function() {
+  showModal();
+});
+</script>
+
+<!-- 點擊ren跳視窗 -->
+<script>
+window.addEventListener('load', (event) => {
+let openModal = document.querySelectorAll(".openModal");
+let close = document.querySelectorAll("#close");
+let myModal = document.querySelectorAll("#myModal");
+
+
+$(document).ready(function() {
+   $(".openModal").on('click', function() {
+     showModal();
+   });
+
+    
+   $("#close").on('click', function() {
+     closeModal();
+   });
+
+
+
+ function showModal() {
+   $("#myModal").css('display', 'block');
+ }
+
+ function closeModal() {
+   $("#myModal").css('display', 'none');
+ };
+});
+});
+
+</script>
+
+
+<!-- 點擊di跳視窗 -->
+<script>
+  window.addEventListener('load', (event) => {
+let diPic = document.querySelectorAll(".diPic");
+let diImfro = document.querySelectorAll("#diImfro");
+let finish = document.querySelectorAll("#finish");
+
+ $(document).ready(function() {
+   $(".diPic").on('click', function() {
+     showModal();
+   });
+
+    
+   $("#finish").on('click', function() {
+     closeModal();
+   });
+
+
+
+ function showModal() {
+   $("#diImfro").css('display', 'block');
+ }
+
+ function closeModal() {
+   $("#diImfro").css('display', 'none');
+ }
+
+})
+});
+
+</script>
+
+
+
+
+<script>
+  //左右切圖
+const slider = document.querySelector('.slider');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+let slideIndex = 0;
+
+function showSlide(index) {
+  slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function nextSlide() {
+  slideIndex = (slideIndex + 1) % slider.children.length;
+  showSlide(slideIndex);
+}
+
+function prevSlide() {
+  slideIndex = (slideIndex - 1 + slider.children.length) % slider.children.length;
+  showSlide(slideIndex);
+}
+
+nextBtn.addEventListener('click', nextSlide);
+prevBtn.addEventListener('click', prevSlide);
+
+
+
+
+
+</script>
+
+
+
+
+</html>

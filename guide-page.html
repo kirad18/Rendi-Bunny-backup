@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <title>Randi Bunny</title>
+<style type="text/css">
+ @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+ 
+
+ html{
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #c1921c;
+    font-family: 'Paytone One', sans-serif;
+}
+a{
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.wrap{
+    padding-top: 2%;
+}
+
+.top{
+    /* max-width: 1400px; */
+    width: 100%;
+    height: 120px;
+    margin: auto;
+    background-color: #e1dcce;
+    border-radius: 10px;
+    border: 2px solid rgb(27,27,27);
+    display: flex;
+    justify-content: center;
+    border-radius: 50px 50px 0 0  ;   
+}
+
+.mark{
+    width: 500px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.pic{
+    display: flex;
+    justify-content: center;
+    transform: translateY(30%);
+}
+
+.pic img{
+    width: 10%;
+    vertical-align: middle;
+}
+
+.rabbit-first{
+    animation-delay: 30s;
+    animation: twinkle 1s infinite alternate;
+}
+
+.rabbit-sec{
+    animation-delay: 40s;
+    animation: twinkle 1.2s infinite alternate;
+}
+
+.rabbit-third{
+    animation-delay: 20s;
+    animation: twinkle 1.5s infinite alternate;
+    
+}
+
+.rabbit-fourth{
+    animation-delay: 20s;
+    animation: twinkle 1.8s infinite alternate; 
+}
+
+.mark-text{
+    font-family: 'Shrikhand', cursive;
+    font-weight: bold;
+    font-size: 2.5em;
+    line-height: 1.5;
+    text-align: center;
+    align-items: end;
+    transform: translateY(5px);
+    color: #bf3a2a;
+}
+
+.bottom{
+    width: 100%;
+    background-color: #bf3a2a;
+    margin: auto;
+    display: flex; 
+}
+
+.left{
+    width: 80%;
+    border-left: 2px solid rgb(27,27,27);
+    background-color: #e1dcce;
+    padding-top: 3%;
+    box-sizing: border-box;
+} 
+
+.left-box{
+    /* max-width: 1200px; */
+    width: 95%;
+    margin: auto;
+    border: 3px solid rgb(27,27,27);
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #bf3a2a;
+}
+
+.top-box{
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    margin-top: -1%;
+    justify-content: space-around;
+}
+
+.top-box img{
+    width: 150%;
+    vertical-align: middle;
+    object-fit: cover;
+    transform: translateY(-5%);
+}
+
+.label{
+    width: 120px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translateY(150%);
+    border: 2px solid rgb(27,27,27);
+    padding: 6px;
+    margin-left: 50px;
+    box-sizing: border-box;
+}
+
+.about>.label {background-color: #FFDA08;}
+.about-txt { 
+    color: #FF3204;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1.3;
+    text-align: center;   
+    text-decoration: none;
+    animation: twinkle 0.5s infinite alternate
+}
+@keyframes twinkle{
+    0%{
+        opacity: 0.8;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.news> .label{background-color: #FCEFDB;}
+.news-txt{
+    color: #B50619;
+    font-family: 'Paytone One', sans-serif; 
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1.1;
+    text-align: center;   
+    text-decoration: none;
+    animation: twinkle 0.5s infinite alternate
+}
+.member>.label{background-color: #E82826;}
+.member-txt{
+    color: #ebebeb;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;   
+    text-decoration: none;
+    animation: twinkle 0.5s infinite alternate
+}
+
+.about-txt:hover{
+    color: #FFDA08;
+    /* -webkit-text-stroke: .5px black; */
+}
+.news-txt:hover{color: #FCEFDB;}
+.member-txt:hover{color: #E82826;}
+.about img:hover{
+    -webkit-animation: jello-vertical 0.9s both;
+	        animation: jello-vertical 0.9s both;
+}
+
+.news img:hover{
+    -webkit-animation: jello-vertical 0.9s both;
+	        animation: jello-vertical 0.9s both;
+}
+.member img:hover{
+    -webkit-animation: jello-vertical 0.9s both;
+	        animation: jello-vertical 0.9s both;
+}
+@-webkit-keyframes jello-vertical {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(0.85, 1.15, 1);
+            transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes jello-vertical {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(0.85, 1.15, 1);
+            transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+
+.about>.label:hover{
+    background-color: #FF3204;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+    animation: animate1 1s linear infinite;
+    border:3px solid  #FFDA08;
+}
+     
+.news>.label:hover{
+    background-color:#B50619 ;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+    animation: animate1 1s linear infinite;
+}
+
+.member>.label:hover{
+    background-color:#FCEFDB ;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+    animation: animate1 1s linear infinite;
+}
+
+ @keyframes animate1{
+    0%{
+        left: 0%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+.about-txt:hover{
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+.news-txt:hover{
+    -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+.member-txt:hover{
+    -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+
+.about>.label:before{
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+}
+.about>.label:after{
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity: 0;
+    background-color: var(--clr-neon);
+    z-index: -1;
+    transition: opacity 100ms linear;
+}
+.news>.label:before{
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+}
+.news.label:after{
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity: 0;
+    background-color: var(--clr-neon);
+    z-index: -1;
+    transition: opacity 100ms linear;
+}
+
+.middle-box{
+    width: 100%;
+    height: 80px;
+    border: 2px solid rgb(27,27,27);
+    display: block;
+    margin: auto;
+    background-color: #e1dcce;
+}
+
+.bottom-box{
+    width: 100%;
+    display: flex;
+    padding-top: 0;
+    justify-content: space-around;
+    background-color: #bf3a2a;
+}
+
+.bottom-box img{
+    width: 110%;
+    vertical-align: middle;
+    object-fit: cover;
+    transform: translateY(-6%);
+}
+
+.gallery >.pic{
+    transform: translateY(48%);
+}
+
+.gallery >.label{
+    background-color: #0B843B;
+    margin-right: 25px;
+    transform: translateY(220%);
+}
+
+.gallery-txt{
+    color: #ebebeb;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1.3;
+    text-align: center;   
+    text-decoration: none;
+    animation: twinkle 0.5s infinite alternate
+}
+
+.product{
+    transform: translateY(-2%);
+}
+
+.product >.label{
+    background-color: #306091;
+    margin-right: 40px;
+    transform: translateY(160%);
+}
+
+.product-txt{
+    color: #ebebeb;
+ 
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1;
+    text-align: center;   
+    text-decoration: none;
+    animation: twinkle 0.5s infinite alternate
+}
+
+.gallery-txt:hover{color: #0B843B;}
+.product-txt:hover{color: #306091;}
+.gallery>.label:hover{
+    background-color: #FFDA08;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+}
+.product>.label:hover{
+    background-color: #ebebeb;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+}
+.gallery img:hover{
+    -webkit-animation: jello-vertical 0.9s both;
+	        animation: jello-vertical 0.9s both;
+}
+.product img:hover{
+    -webkit-animation: jello-vertical 0.9s both;
+	        animation: jello-vertical 0.9s both;
+}
+
+.under-box{
+    width: 100%;
+    height: 80px;
+    border: 2px solid rgb(27,27,27);
+    display: block;
+    margin: auto;
+    background-color: #e1dcce;
+}
+
+.right{
+    width: 20%;
+    display: flex;
+    position: relative;
+    border-right: 2px solid rgb(27, 27,27);
+    background-color: #e1dcce;
+}
+
+.cash-box{
+    width: 100%;
+    margin-top: 15%;
+}
+
+.cash-top{
+    width: 95%;
+    height: 610px;
+    position: relative;
+    border-radius: 30px;
+    background-color: #bf3a2a;
+    box-shadow: -20px 10px 0 #8b100f;
+    border: 2px solid rgb(27,27,27);
+}
+
+.coin-box{
+    margin-top: 15%;
+    position: absolute;
+}
+
+.coin{
+    width: 80%;
+    height: 200px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    background-color: #797979;
+    border: 2px solid rgb(27,27,27);
+}
+.coin-top{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.left-coin{
+    width: 40%;
+    height: 15px;
+    border-radius: 5px;
+    background-color: #606060;
+    border: 2px solid rgb(27,27,27);
+}
+
+.right-coin{
+    width: 40%;
+    height: 20px;
+    border-radius: 5px;
+    /* margin-left: 15%; */
+    background-color: #606060;
+    border: 2px solid rgb(27,27,27);
+}
+
+.coin-bottom{
+    height: 70%;
+    display: flex;
+}
+
+.price-box{
+    width: 65%;
+    height: 120px;
+    display: block;
+    border-radius: 5px;
+    position: absolute;
+    background-color: #343434;
+    border: 2px solid rgb(27,27,27);
+}
+.coin-text{
+    color: #e1dcce;
+    font-size: 2.8em;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: auto;
+    z-index: 999;
+    animation: neon-txt 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-txt {
+  0%,
+  100% {
+    text-shadow: 0 0 20px #fff, 0 0 100px #fff, 0 0 20px #fff;
+  }
+  50% {
+    text-shadow: 0 0 50px #fff, 0 0 150px #fff, 0 0 50px #fff;
+    color: lightblue;
+  }
+}
+
+.ticket-box{
+    width: 80%;
+   margin-top: 20%;
+   box-sizing: border-box;
+   position: absolute;
+   padding: 15px;
+   box-sizing: border-box;
+}
+
+.inside-box img{
+    width: 100%;
+    transform: translateX(10%);
+}
+
+.down{
+    width: 100%;
+    height: 200px;
+    background-color: #e1dcce;
+}
+
+ /**平板**/	
+ @media(min-width: 768px) and (max-width: 1023px) {}
+ /**手機**/	
+ @media (max-width: 767px){
+    html, body{ 
+        overflow: hidden; 
+    }  
+     .wrap{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap ;
+        width: 100%;
+        padding-top: 3%;
+     }
+      img{
+        max-width: 100%;
+        height: auto;
+    }
+    .top{
+        width: 100%;
+    }
+    .bottom{
+        display: block;
+        width: 100%;
+    }
+    .left{
+        width: 100%;
+        border-right: 2px solid rgb(27,27,27);
+    }
+    .left-box{
+        width: 95%;
+    }
+
+    .top-box{
+        transform: translateY(10%);
+    }
+    .label{
+        width: 55%;
+    }
+    .about > .label,  .news > .label, .member > .label {
+        position: relative;
+        top: -10%;
+        left: -15%;
+    }
+    .about-txt, .news-txt, .member-txt, .gallery-txt, .product-txt{
+        padding: 2px;
+        font-size: .6em;
+    }
+
+    .product{
+        width: 30%;
+        transform: translateY(5%);
+    }
+    .product > .pic{
+        width: 86%;
+    }
+    .gallery{
+        width: 30%;
+        transform: translateY(7%);
+    }
+    .gallery > .pic{
+        width: 70%;
+    }
+    .product > .label,  .gallery > .label{
+        position: relative;
+        top: -10%;
+        left: -40%;
+        width: 65%;
+    }
+    .product > .label{
+        position: relative;
+        top: -6%;
+       
+    }
+
+    .right{display: none;}
+
+ }
+
+</style>
+</head>
+<body>
+    
+<div class="wrap">
+
+    <div class="top">
+        
+        <div class="mark">
+            <div class="pic">
+                <img class= "rabbit-first" src="image/guide-page-rabbit.svg" alt="logo">
+                <img class= "rabbit-sec" src="image/guide-page-rabbit.svg" alt="logo" >
+                <img class= "rabbit-third" src="image/guide-page-rabbit.svg" alt="logo" >
+                <img class= "rabbit-fourth" src="image/guide-page-rabbit.svg"  alt="logo"> 
+            </div>
+            <div class="mark-text">CHOOSE ONE</div>
+        </div>
+    </div>
+<!-- ---------------------------------------------------------------------- -->
+    <div class="bottom">
+        <div class="left">
+        <div class="left-box">
+            <div class="top-box">
+<!-- ---------------------------------------------------------------------- -->
+                <div class="about">
+                    <div class="pic">
+                        <a href="about.html"><img src="image/guide-page-about.svg" alt="about"></a></div>
+                    <div class="label">
+                        <a href="about.html"><p class="about-txt">ABOUT</p></a></div>
+                </div>
+<!-- ---------------------------------------------------------------------- -->
+                <div class="news">
+                    <div class="pic">
+                        <a href="news.html"><img src="image/guide-page-news.svg" alt="news"></a></div>
+                        <div class="label">
+                            <a href="news.html"><p class="news-txt">NEWS</p></a></div>
+                </div>
+<!-- ---------------------------------------------------------------------- -->
+                <div class="member">
+                    <div class="pic">
+                        <a href="member.html"><img src="image/guide-page-member.svg" alt="member"></a></div>
+                        <div class="label">
+                            <a href="member.html"><p class="member-txt">MEMBER</p></a> </div>
+                </div>
+            </div>
+<!-- ---------------------------------------------------------------------- -->
+            <div class="middle-box"></div>
+<!-- ---------------------------------------------------------------------- -->
+            <div class="bottom-box">
+                <div class="gallery">
+                    <div class="pic">
+                        <a href="gallery.html"><img src="image/guide-page-gallery.svg" alt="gallery"></a></div>
+                        <div class="label">
+                            <a href="gallery.html"><p class="gallery-txt">GALLERY</p></a> </div>
+                </div>
+  <!-- ---------------------------------------------------------------------- -->              
+                <div class="product">
+                    <div class="pic">
+                        <a href="product.html"><img src="image/guide-page-product.svg" alt="product"></a></div>
+                        <div class="label">
+                            <a href="product.html"><p class="product-txt">PRODUCT</p></a> </div>
+                </div>
+            </div>
+<!-- ---------------------------------------------------------------------- -->
+             <div class="under-box"></div>
+        </div>
+        
+    </div>
+
+            
+<!-- ---------------------------------------------------------------------- -->
+        <div class="right">
+
+            <div class="cash-box">
+                <div class="cash-top"></div>
+            </div>
+
+                <div class="coin-box">
+                    <div class="coin">
+                        <div class="coin-top">
+                            <div class="left-coin"></div>
+                            <div class="right-coin"></div>
+                        </div>
+                        <div class="coin-bottom">
+                            <div class="price-box"></div>
+                            <div class="coin-text">CASH ONLY</div>
+                        </div>
+                   </div>
+                  
+                <div class="ticket-box">
+                    <div class="inside-box">
+                        <img src="image/ticket.gif" alt="gif">
+                    </div>
+                </div>
+                </div>
+
+   
+        </div>           
+        </div>
+
+        <div class="down">
+            <div class="down-box"></div>
+        </div>
+   
+   
+</div>
+
+<!-- shrikhand外掛 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+
+
+</body>
+<script src="./js/jquery-3.7.0.js"></script>
+</html>
